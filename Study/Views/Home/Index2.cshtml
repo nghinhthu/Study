@@ -1,0 +1,117 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@*<form method="post" asp-controller="Home">
+        <table style="width: 100%; margin-bottom: 25px">
+            <tr>
+                <td>
+                    <button name="button" style="background-color: transparent; color: black"
+                            value="Button 1" asp-action="check">
+                        Button 1
+                    </button>
+                </td>
+                <td>
+                    <button name="button" style="background-color: transparent; color: black" value="Button 2" asp-action="check">Button 2</button>
+                </td>
+                <td>
+                    <button name="button" style="background-color: transparent; color: black" value="Button 3" asp-action="check">Button 3</button>
+                </td>
+                <td>
+                    <button name="button" style="background-color: transparent; color: black" value="Button 4" asp-action="check">Button 4</button>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+
+    <div>
+        @TempData["ButtonValue"]
+    </div>*@
+<h2 class="text-center">Layout 2</h2>
+<div class="layout">
+    <form method="get">
+        <div class="row">
+            <div class="col-sm-2">Select Layout</div>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <select id="layout-select" class="form-control" asp-items="@ViewBag.LayoutList"></select>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <a asp-action="SelectLayout" asp-controller="Home" id="btn-selectLayout" class="btn btn-primary">Save</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div style="background-color: lightgray; padding: 10px; min-height: 350px">
+    <div class="config-menu">
+        <h3 class="text-center">Config Area</h3>
+        <button id="setting" class="btn btn-primary">Setting</button>
+    </div>
+    <div class="config-content" style="display: none">
+        <div class="row">
+            <div class="col-sm-2">Select Font</div>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <select oninput="change()" id="font-select" class="form-control" asp-items="@ViewBag.FontList"></select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">Select Font Size</div>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <input oninput="change()" id="fontsize-select" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">Select Font</div>
+            <div class="col-sm-3">
+                <div class="input-group input-group-sm mb-3">
+                    <select onchange="change()" id="color-select" class="form-control" asp-items="@ViewBag.ColorList"></select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="config-result">
+        Content config result: <p id="result">Asp .Net Core</p>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script>
+    $("#setting").click(function () {
+        $(".config-content").toggle();
+    });
+
+    function change() {
+        var font = $('#font-select option:selected').text();
+        var fontsize = $('#fontsize-select').val();
+        var color = $('#color-select option:selected').text().replace(/\s/g, '');
+
+        $("#result").css("font-family", font)
+        $("#result").css("font-size", fontsize + "px")
+        $("#result").css("color", color)
+    }
+
+    $('#btn-selectLayout').click(function (e) {
+        e.preventDefault();
+        var id = $('#layout-select').val();
+        if (id > 0) {
+            window.location.href = $(this).attr('href') + '/' + id;
+        }
+        else {
+            $('#message').text('select an option first!')
+        }
+    });
+
+</script>
