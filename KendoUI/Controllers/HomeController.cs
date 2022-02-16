@@ -1,0 +1,23 @@
+﻿using KendoUI.Models;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace KendoUI.Controllers
+{
+    public class HomeController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public void SaveHtmlToDatabase(CMSNewsModel model)
+        {
+            string content = model.NewsContent;
+        }
+    }
+}
