@@ -7,7 +7,7 @@ namespace KendoUI.Controllers
     {
         private const string contentFolderRoot = "wwwroot/";
         private const string folderName = "Images/";
-        private static readonly string[] foldersToCopy = new[] { "wwwroot/UserFiles/Images" };
+        private static readonly string[] foldersToCopy = new[] { "UserFiles/Images" };
 
         /// <summary>
         /// Gets the base paths from which content will be served.

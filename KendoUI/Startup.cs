@@ -1,3 +1,4 @@
+using Kendo.Mvc.UI;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +25,9 @@ namespace KendoUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            //services.AddSingleton<IDirectoryBrowser>();
+            //services.AddSingleton<IDirectoryPermission>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
