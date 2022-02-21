@@ -1,15 +1,9 @@
-using Kendo.Mvc.UI;
-using KendoUI.Models;
+using Kendo.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 
 namespace KendoUI
@@ -28,14 +22,20 @@ namespace KendoUI
         {
             services.AddRazorPages();
 
+            //services.Configure<DI>(Configuration.GetSection("ApplicationConfiguration"));
+
+
             services
             .AddControllersWithViews()
             .AddJsonOptions(options =>
-                options.JsonSerializerOptions.PropertyNamingPolicy = null);
+            {
+                options.JsonSerializerOptions.PropertyNamingPolicy = null;
+                options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+            }
+                );
 
             // Add the Kendo UI services to the services container.
             //services.AddKendo();
-
 
         }
 

@@ -28,16 +28,16 @@ namespace KendoUI.Controllers
         private string CreateUserFolder()
         {
             var virtualPath = Path.Combine(contentFolderRoot, "UserFiles", folderName);
-            //var path = HostingEnvironment.WebRootFileProvider.GetFileInfo(virtualPath).PhysicalPath;
+            var path = HostingEnvironment.WebRootFileProvider.GetFileInfo(virtualPath).PhysicalPath;
 
-            //if (!Directory.Exists(path))
-            //{
-            //    Directory.CreateDirectory(path);
-            //    foreach (var sourceFolder in foldersToCopy)
-            //    {
-            //        CopyFolder(HostingEnvironment.WebRootFileProvider.GetFileInfo(sourceFolder).PhysicalPath, path);
-            //    }
-            //}
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+                foreach (var sourceFolder in foldersToCopy)
+                {
+                    CopyFolder(HostingEnvironment.WebRootFileProvider.GetFileInfo(sourceFolder).PhysicalPath, path);
+                }
+            }
             return virtualPath;
         }
 
