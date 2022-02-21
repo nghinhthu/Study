@@ -1,4 +1,5 @@
 using Kendo.Mvc.UI;
+using KendoUI.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -9,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 
 namespace KendoUI
 {
@@ -26,8 +28,15 @@ namespace KendoUI
         {
             services.AddRazorPages();
 
-            //services.AddSingleton<IDirectoryBrowser>();
-            //services.AddSingleton<IDirectoryPermission>();
+            services
+            .AddControllersWithViews()
+            .AddJsonOptions(options =>
+                options.JsonSerializerOptions.PropertyNamingPolicy = null);
+
+            // Add the Kendo UI services to the services container.
+            //services.AddKendo();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

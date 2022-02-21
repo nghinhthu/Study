@@ -12,6 +12,7 @@ namespace KendoUI.Controllers
         IOptions<IDirectoryPermission> _directoryPermission;
 
 
+
         protected EditorImageBrowserController(IHostingEnvironment hostingEnvironment)
             : this(
 

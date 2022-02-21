@@ -43,24 +43,24 @@
                 "tableWizard", "createTable", "addColumnLeft", "addColumnRight", "addRowAbove", "addRowBelow", "deleteRow", "deleteColumn",
                 "formatting", "cleanFormatting",
                 //"insertHtml",
-                "viewHtml",
-                "print",
-                "pdf",
-                "copyFormat", "applyFormat",
+                //"viewHtml",
+                //"print",
+                //"pdf",
+                //"copyFormat", "applyFormat",
             ],
-            //imageBrowser: {
-            //    transport: {
-            //        read: "imagebrowser/read",
-            //        destroy: "imagebrowser/destroy",
-            //        create: "imagebrowser/createDirectory",
-            //        uploadUrl: "imagebrowser/upload",
-            //        thumbnailUrl: "imagebrowser/thumbnail",
-            //        imageUrl: "/UserFiles/Images/{0}"
+            imageBrowser: {
+                transport: {
+                    read: "imagebrowser/Read",
+                    destroy: "imagebrowser/destroy",
+                    create: "imagebrowser/createDirectory",
+                    uploadUrl: "imagebrowser/upload",
+                    thumbnailUrl: "imagebrowser/thumbnail",
+                    imageUrl: "/UserFiles/Images/{0}"
 
-            //        //action/controller
-            //    },
-            //    path: "/UserFiles/Images"
-            //}
+                    //action/controller
+                },
+                path: "/UserFiles/Images"
+            }
         });
 
 

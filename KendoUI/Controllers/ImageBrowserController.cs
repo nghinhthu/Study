@@ -5,9 +5,9 @@ namespace KendoUI.Controllers
 {
     public class ImageBrowserController : EditorImageBrowserController
     {
-        private const string contentFolderRoot = "wwwroot/";
+        private const string contentFolderRoot = "UserFiles/";
         private const string folderName = "Images/";
-        private static readonly string[] foldersToCopy = new[] { "UserFiles/Images" };
+        private static readonly string[] foldersToCopy = new[] { "UserFiles/Images/Copy" };
 
         /// <summary>
         /// Gets the base paths from which content will be served.
@@ -28,16 +28,16 @@ namespace KendoUI.Controllers
         private string CreateUserFolder()
         {
             var virtualPath = Path.Combine(contentFolderRoot, "UserFiles", folderName);
-            var path = HostingEnvironment.WebRootFileProvider.GetFileInfo(virtualPath).PhysicalPath;
+            //var path = HostingEnvironment.WebRootFileProvider.GetFileInfo(virtualPath).PhysicalPath;
 
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-                foreach (var sourceFolder in foldersToCopy)
-                {
-                    CopyFolder(HostingEnvironment.WebRootFileProvider.GetFileInfo(sourceFolder).PhysicalPath, path);
-                }
-            }
+            //if (!Directory.Exists(path))
+            //{
+            //    Directory.CreateDirectory(path);
+            //    foreach (var sourceFolder in foldersToCopy)
+            //    {
+            //        CopyFolder(HostingEnvironment.WebRootFileProvider.GetFileInfo(sourceFolder).PhysicalPath, path);
+            //    }
+            //}
             return virtualPath;
         }
 
