@@ -77,7 +77,8 @@
             )
         )
         .ImageBrowser(imageBrowser => imageBrowser
-            .Image("~/UserFiles/UserFiles/Images/{0}")
+        //input web address == virtualPath
+            .Image("~/UserFiles/Shared/Images/{0}")
             .Read("Read", "ImageBrowser")
             .Create("Create", "ImageBrowser")
             .Destroy("Destroy", "ImageBrowser")
@@ -122,6 +123,12 @@
 
         $("#set").click(setValue);
 
+        //change web address url in image browser
+        var insertImage = kendo.ui.editor.ImageCommand.fn.insertImage;
+        kendo.ui.editor.ImageCommand.fn.insertImage = function (img, range) {
+            this.attributes.src = this.attributes.src.replace(/%2F/g, "/");
+            insertImage.call(this, img, range);
+        }
 
     })
 
@@ -133,3 +140,54 @@
         height: 800px;
     }
 </style>
+
+@*preview FILE when uploaded*@
+
+@*<div id="example">
+        <h3>Add image preview before uploading file</h3>
+        <input type="file" id="files">
+
+        <script>
+            $(document).ready(function () {
+                $("#files").kendoUpload({
+                    async: {
+                        saveUrl: "save",
+                        removeUrl: "remove",
+                        autoUpload: false
+                    },
+                    multiple: false,
+                    select: function (e) {
+                        var fileInfo = e.files[0];
+                        var wrapper = this.wrapper;
+
+                        setTimeout(function () {
+                            addPreview(fileInfo, wrapper);
+                        });
+                    }
+                });
+            });
+
+            function addPreview(file, wrapper) {
+                var raw = file.rawFile;
+                var reader = new FileReader();
+
+                if (raw) {
+                    reader.onloadend = function () {
+                        var preview = $("<img class='image-preview'>").attr("src", this.result);
+
+                        wrapper.find(".k-file[data-uid='" + file.uid + "'] .k-file-group-wrapper")
+                            .replaceWith(preview);
+                    };
+
+                    reader.readAsDataURL(raw);
+                }
+            }
+        </script>
+        <style>
+            .image-preview {
+                position: relative;
+                vertical-align: top;
+                height: 45p
+            }
+        </style>
+    </div>*@

@@ -21,8 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\UserFiles\ImagesCopy\TempImage\" />
-    <Folder Include="wwwroot\UserFiles\Images\" />
+    <Folder Include="wwwroot\UserFiles\ImagesCopy\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties UseCdnSupport="" /></VisualStudio></ProjectExtensions>

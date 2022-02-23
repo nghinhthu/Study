@@ -32,7 +32,7 @@ namespace TelerikAspNetCoreApp.Controllers
 
         private string CreateUserFolder()
         {
-            var virtualPath = Path.Combine(contentFolderRoot, "UserFiles", folderName);
+            var virtualPath = Path.Combine(contentFolderRoot, "Shared", folderName);
             var path = HostingEnvironment.WebRootFileProvider.GetFileInfo(virtualPath).PhysicalPath;
 
             if (!Directory.Exists(path))
