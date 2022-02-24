@@ -2,13 +2,16 @@
 using Kendo.Mvc.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace KendoUI.Controllers
 {
     public abstract class EditorImageBrowserController : BaseFileBrowserController/*, IImageBrowserController*/
     {
+
         protected EditorImageBrowserController(IHostingEnvironment hostingEnvironment)
             : this(
+
                   DI.Current.Resolve<IDirectoryBrowser>(),
                   DI.Current.Resolve<IDirectoryPermission>(),
                   hostingEnvironment)

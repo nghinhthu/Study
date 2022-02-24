@@ -5,9 +5,9 @@ namespace KendoUI.Controllers
 {
     public class ImageBrowserController : EditorImageBrowserController
     {
-        private const string contentFolderRoot = "wwwroot/";
+        private const string contentFolderRoot = "UserFiles/";
         private const string folderName = "Images/";
-        private static readonly string[] foldersToCopy = new[] { "wwwroot/UserFiles/Images" };
+        private static readonly string[] foldersToCopy = new[] { "UserFiles/Images/Copy" };
 
         /// <summary>
         /// Gets the base paths from which content will be served.

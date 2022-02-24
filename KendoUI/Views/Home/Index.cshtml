@@ -24,11 +24,10 @@
 
     </textarea>
 
-
-    <button id="get">Get value</button>
+    <button id="get" class="btn btn-primary">Get value</button>
     <textarea id="value" style="width: 100%;" rows="10" cols="20">new value</textarea>
 
-    <button id="set">Set value</button>
+    <button id="set" class="btn btn-primary">Set value</button>
 </div>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -44,10 +43,10 @@
                 "tableWizard", "createTable", "addColumnLeft", "addColumnRight", "addRowAbove", "addRowBelow", "deleteRow", "deleteColumn",
                 "formatting", "cleanFormatting",
                 //"insertHtml",
-                "viewHtml",
-                "print",
-                "pdf",
-                "copyFormat", "applyFormat",
+                //"viewHtml",
+                //"print",
+                //"pdf",
+                //"copyFormat", "applyFormat",
             ],
             imageBrowser: {
                 transport: {
@@ -56,11 +55,11 @@
                     create: "imagebrowser/createDirectory",
                     uploadUrl: "imagebrowser/upload",
                     thumbnailUrl: "imagebrowser/thumbnail",
-                    imageUrl: "~/wwwroot/UserFiles/Images/{0}"
+                    imageUrl: "/UserFiles/Images/{0}"
 
                     //action/controller
                 },
-                path: "~/wwwroot/UserFiles/Images"
+                path: "/UserFiles/Images"
             }
         });
 
