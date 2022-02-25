@@ -9,12 +9,23 @@ namespace Study.Controllers
 {
     public class StudentController : Controller
     {
-        List<StudentModel> studentModels = new List<StudentModel>();
+        //List<StudentModel> studentModels = new List<StudentModel>();
+
+        List<StudentModel> studentList;
+
+        public StudentController()
+        {
+            studentList = new List<StudentModel>()
+            {
+                new StudentModel(){ ID = 1, Name = "Bak Bak", Address = "Binh Tan", City = "Ho Chi Minh" },
+                new StudentModel(){ ID = 2, Name = "Meo Meo", Address = "Binh Tan", City = "Ho Chi Minh" },
+                new StudentModel(){ ID = 3, Name = "Cow Cow", Address = "Binh Tan", City = "Ho Chi Minh" },
+            };
+        }
 
         public IActionResult Index()
         {
-            studentModels.Add(new StudentModel { ID = 1, Name = "Nghinh Thu", Address = "Binh Tan", City = "Ho Chi Minh" });
-            return View(studentModels);
+            return View(studentList);
         }
 
         public IActionResult Create()
@@ -26,7 +37,7 @@ namespace Study.Controllers
         [HttpPost]
         public IActionResult Create(StudentModel student)
         {
-            studentModels.Add(student);
+            studentList.Add(student);
             return View("Index");
         }
 
@@ -34,7 +45,7 @@ namespace Study.Controllers
         {
             StudentModel model = new StudentModel();
             model.ID = 1;
-            model.Name = "Nghinh Thu";
+            model.Name = "Meo Meo";
             model.Address = "BT";
             model.Address = "Ho Chi Minh";
             return View(model);
@@ -44,7 +55,7 @@ namespace Study.Controllers
         {
             StudentModel model = new StudentModel();
             model.ID = 1;
-            model.Name = "Nghinh Thu";
+            model.Name = "Meo Meo";
             model.Address = "BT";
             model.City = "Ho Chi Minh";
             return View(model);
