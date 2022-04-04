@@ -17,7 +17,6 @@ namespace OTPService.Logic
         ApplicationConfiguration appconfig;
         #region constructor
 
-
         public OTPServiceHandler(IOptions<ApplicationConfiguration> option, IOTPDataHandler _otpDataHander,
            ILogger<OTPServiceHandler> _logger)
         {
@@ -142,16 +141,10 @@ namespace OTPService.Logic
                         processResult.Errors.Add(error);
                         LogError(processResult.Errors);
                         return processResult;
-
                     }
 
                     otpResult = GenerateOTPCode(request, lastData.Sequence);
                     processResult.Content = otpResult;
-
-
-
-
-
                 }
                 //3. last data exist but in different session
                 else
@@ -242,7 +235,6 @@ namespace OTPService.Logic
                 ExpiredIn = expiredIn,
                 ExpiredDateTime = expiredDateTime
             };
-
             return result;
         }
 
@@ -359,7 +351,6 @@ namespace OTPService.Logic
                     case "RequestDataRange":
                         OTPConfig.RequestDataRange = Convert.ToInt32(item.KeyValue);
                         break;
-
                     default:
                         break;
                 }
