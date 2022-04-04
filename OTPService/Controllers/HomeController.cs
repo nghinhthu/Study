@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using MSA.FW.Validation;
 using OTPService.Logic;
 using OTPService.Models;
 using System;
@@ -15,6 +16,8 @@ namespace OTPService.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationConfiguration _appConfig;
+        private readonly IOTPServiceHandler otpServiceHandler;
+
         public HomeController(ILogger<HomeController> logger, IOptions<ApplicationConfiguration> appConfig)
         {
             _logger = logger;
@@ -37,14 +40,22 @@ namespace OTPService.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
+        [HttpPost]
         public async Task<IActionResult> RequestOTP(OTPRequestModel model)
         {
+            model.SessionID = "123";
+            model.RequesterID = "thu";
+            model.TCodeKey = "89021f49-2c3a-47df-bbad-74680019b123";
+            model.RequestDateTime = DateTime.Today;
             RequestOTP requestOTP = new RequestOTP(model);
-            BOProcessResult result = await
-            return RedirectToAction("Index");
+            BOProcessResult result = await otpServiceHandler.GetOTPCode(requestOTP);
+            return Ok(result);
+        }
 
-
+        public IActionResult RequestOTP()
+        {
+            ViewBag.AppConfig = _appConfig.ConnectionString;
+            return View();
         }
     }
 }
