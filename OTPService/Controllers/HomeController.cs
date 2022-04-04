@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using OTPService.Logic;
 using OTPService.Models;
 using System;
 using System.Collections.Generic;
@@ -12,14 +14,16 @@ namespace OTPService.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ApplicationConfiguration _appConfig;
+        public HomeController(ILogger<HomeController> logger, IOptions<ApplicationConfiguration> appConfig)
         {
             _logger = logger;
+            _appConfig = appConfig.Value;
         }
 
         public IActionResult Index()
         {
+            ViewBag.AppConfig = _appConfig.ConnectionString;
             return View();
         }
 
@@ -32,6 +36,15 @@ namespace OTPService.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public async Task<IActionResult> RequestOTP(OTPRequestModel model)
+        {
+            RequestOTP requestOTP = new RequestOTP(model);
+            BOProcessResult result = await
+            return RedirectToAction("Index");
+
+
         }
     }
 }
