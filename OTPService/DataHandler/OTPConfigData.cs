@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OTPService.DataHandler
 {
-    //[Table("[OTPConfig]")]
+    [Table("[OTPConfig]")]
     public class OTPConfigData
     {
         public int ID { get; set; }

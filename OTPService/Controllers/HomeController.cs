@@ -18,10 +18,13 @@ namespace OTPService.Controllers
         private readonly ApplicationConfiguration _appConfig;
         private readonly IOTPServiceHandler otpServiceHandler;
 
-        public HomeController(ILogger<HomeController> logger, IOptions<ApplicationConfiguration> appConfig)
+        public HomeController(ILogger<HomeController> logger,
+            IOptions<ApplicationConfiguration> appConfig,
+            IOTPServiceHandler _otpServiceHandler)
         {
             _logger = logger;
             _appConfig = appConfig.Value;
+            otpServiceHandler = _otpServiceHandler;
         }
 
         public IActionResult Index()
