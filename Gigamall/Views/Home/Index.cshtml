@@ -1,0 +1,685 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@*<div class="container">
+        <div class="top-header">
+            <div class="container">
+                <div class="logo left-header">
+                    <a href="javascript:void(0)">
+                        <img src="~/img/logo.png" alt="Gigamall" />
+                    </a>
+                </div>
+                <div class="right-header">
+                    <div class="info-header">
+                        <h2>Trung tâm thương mại Gigamall</h2>
+                        <p>
+                            240 - 242 Phạm Văn Đồng
+                            <br />
+                            P. Hiệp Bình Chánh, Tp. Thủ Đức
+                        </p>
+                        <p>Hotline: 028 666 00222 - Email: info@gigamall.com.vn</p>
+                    </div>
+                    <div class="menu">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                            <div class="container-fluid">
+                                <a class="navbar-brand" href="#">Navbar</a>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Link</a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Dropdown
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                <li><hr class="dropdown-divider"></li>
+                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link disabled">Disabled</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+<body>
+    <div id="fixed-social">
+        <div>
+            <a href="https://www.facebook.com/gigamallvietnam/" class="fixed-facebook" target="_blank"><i class="fa fa-facebook"></i> <span>Facebook</span></a>
+        </div>
+        <div>
+            <a href="https://www.instagram.com/gigamall_vietnam/" class="fixed-instagrem" target="_blank"><i class="fa fa-instagram"></i> <span>Instagram</span></a>
+        </div>
+        <div>
+            <a href="https://www.youtube.com/channel/UCfO8mX8z8GrP1SQIzzt2o_A?view_as=subscriber" class="fixed-youtube" target="_blank"><i class="fa fa-youtube"></i> <span>Youtube</span></a>
+        </div>
+    </div>
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="/vn/">
+                        <img src="~/images/logo.png" alt="GIGAMALL">
+                    </a>
+                </div>
+                <div class="header-right">
+                    <div class="info-gigamall-header">
+                        <h2>TRUNG TÂM THƯƠNG MẠI GIGAMALL</h2>
+                        <p>240 - 242 Phạm Văn Đồng,<br>P. Hiệp Bình Chánh,&nbsp;Q. Thủ Đức, TP.HCM</p>
+                        <p>Hotline: 028 666 00222 - Email: info@gigamall.com.vn</p>
+                    </div>
+                    <div class="menu">
+                        <link href="~/css/cssmenu/styles.css" rel="stylesheet" />
+                        <script src="~/css/cssmenu/script.js"></script>
+                        <div id="cssmenu">
+                            <div id="menu-line" style="width: 97px; left: 0px;"></div>
+                            <div id="menu-button"></div>
+                            <ul>
+                                <li class="active">
+                                    <a href="/vn">Trang chủ</a>
+                                </li>
+                                <li class="has-sub">
+                                    <span class="submenu-button"></span>
+                                    <a href="/vn/gioi-thieu/" alt="Giới thiệu">Giới thiệu</a>
+                                    <ul>
+                                        <li><a style="" href="/vn/gioi-thieu/ve-gigamall/" alt="Về GIGAMALL">Về GIGAMALL</a></li>
+                                        <li><a style="" href="/vn/gioi-thieu/tuyen-dung/" alt="Tuyển dụng">Tuyển dụng</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/vn/khuyen-mai/" alt="Khuyến mãi">Khuyến mãi</a></li>
+                                <li class="has-sub">
+                                    <span class="submenu-button"></span>
+                                    <a href="/vn/tin-tuc-su-kien/" alt="Tin tức &amp; Sự kiện">Tin tức &amp; Sự kiện</a>
+                                    <ul>
+                                        <li><a style="" href="/vn/tin-tuc-su-kien/su-kien/" alt="Sự kiện">Sự kiện</a></li>
+                                        <li><a style="" href="/vn/tin-tuc-su-kien/clip-trai-nghiem/" alt="Clip trải nghiệm">Clip trải nghiệm</a></li>
+                                        <li><a style="" href="/vn/tin-tuc-su-kien/bai-viet/" alt="Bài viết">Bài viết</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-sub">
+                                    <span class="submenu-button"></span><a href="/vn/thuong-hieu/" alt="Thương hiệu">Thương hiệu</a><ul>
+                                        <li><a style="" href="/vn/am-thuc/" alt="Ẩm thực">Ẩm thực</a></li>
+                                        <li><a style="" href="/vn/cua-hang-tien-ich/" alt="Cửa hàng tiện ích">Cửa hàng tiện ích</a></li>
+                                        <li><a style="" href="/vn/dien-may/" alt="Điện máy">Điện máy</a></li>
+                                        <li><a style="" href="/vn/gia-dung/" alt="Gia dụng">Gia dụng</a></li>
+                                        <li><a style="" href="/vn/chan-goi-nem-noi-that/" alt="Chăn gối nệm &amp; Nội thất">Chăn gối nệm &amp; Nội thất</a></li>
+                                        <li><a style="" href="/vn/giai-tri/" alt="Giải trí">Giải trí</a></li>
+                                        <li><a style="" href="/vn/giao-duc/" alt="Giáo dục">Giáo dục</a></li>
+                                        <li><a style="" href="/vn/lam-dep-suc-khoe/" alt="Làm đẹp &amp; sức khỏe">Làm đẹp &amp; sức khỏe</a></li>
+                                        <li><a style="" href="/vn/my-pham-nuoc-hoa/" alt="Mỹ phẩm &amp; Nước hoa">Mỹ phẩm &amp; Nước hoa</a></li>
+                                        <li><a style="" href="/vn/sieu-thi/" alt="Siêu thị">Siêu thị</a></li>
+                                        <li><a style="" href="/vn/thoi-trang-phu-kien/" alt="Thời trang &amp; Phụ kiện">Thời trang &amp; Phụ kiện</a></li>
+                                        <li><a style="" href="/vn/the-thao/" alt="Thể thao">Thể thao</a></li>
+                                        <li><a style="" href="/vn/khac/" alt="Khác">Khác</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/vn/so-do-tang/" alt="Sơ đồ tầng">Sơ đồ tầng</a></li>
+                                <li class="has-sub">
+                                    <span class="submenu-button"></span><a href="/vn/thanh-vien/" alt="Thành viên">Thành viên</a>
+                                    <ul>
+                                        <li><a style="" href="/vn/thanh-vien/the-thanh-vien/" alt="Thẻ thành viên">Thẻ thành viên</a></li>
+                                        <li><a style="" href="/vn/thanh-vien/chuong-trinh-dac-quyen/" alt="Chương trình đặc quyền">Chương trình đặc quyền</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/vn/tien-ich/" alt="Tiện ích">Tiện ích</a></li>
+                                <li><a href="/vn/lien-he/" alt="Liên hệ">Liên hệ</a></li>
+                                <li id="search_form" class="search_form">
+                                    <form id="fsm" name="fsm" action="/xmlhttp.aspx?FID=6&amp;search=1" method="post">
+                                        <input type="text" id="searchid" name="searchid" onfocusout="hidden_search_form()" placeholder="Nhập từ khoá" onkeypress="return keyEnter(event,'Search')" class="" onclick="this.value=''">
+                                        <div class="search-btn">
+                                            <a class="search-icon" href="javascript:search('Search')">
+                                                <img src="~/images/search-store-icon.png">
+                                            </a>
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu-right">
+                            <div class="search-form-button" id="search_form_button">
+                                <a href="javascript:void(0)" onclick="show_search_form()">
+                                    <img src="~/images/search-icon.png" alt="GIGAMALL">
+                                </a>
+                            </div>
+                            <div class="language">
+                                <a class="en" href="/en/">
+                                    <img src="~/images/en.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="banner">
+        <div id="carouselExampleControls" class="carousel slide" style="width: 1234px; height: 462.524px; max-width: 3000px;" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="~/data/2021/10/22/07063630_15054789gigamallcovid1366x512.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="~/data/2022/04/28/11022199_coverwebsite.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="~/data/2021/10/22/07063630_15054789gigamallcovid1366x512.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    <section class="subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <p>Hãy trở thành những khách hàng đầu tiên cập nhật các thông tin ưu đãi, khuyến mãi, giải trí hiện đại và cẩm nang mua sắm thông minh từ các thương hiệu hàng đầu tại GIGAMALL.</p>
+                </div>
+                <div class="col-sm-5">
+                    <div class="subscribe-input">
+                        <input id="email_subscribe" name="email_subscribe" value="" placeholder="Email của bạn"><a href="javascript:void(0);" onclick="subscribe_email('');" class="submit-subscribe"><span>Đăng ký ngay</span><img src="~/images/icon-left-button.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><section class="events article-list">
+        <div class="container">
+            <h3 class="title-group-home">
+                <a href="/vn/tin-tuc-su-kien/su-kien/" alt="Sự kiện">Sự kiện</a>
+            </h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="article-item">
+                        <div class="bg-article-item">
+                            <a href="/vn/tin-tuc-su-kien/su-kien/mot-su-kien-hoanh-trang-khong-nen-bo-lo/" title="MỘT SỰ KIỆN HOÀNH TRÁNG KHÔNG NÊN BỎ LỠ" alt="MỘT SỰ KIỆN HOÀNH TRÁNG KHÔNG NÊN BỎ LỠ"><div style="background-image: url('/data/2022/04/13/02282634_hatgaolangta900x900.jpg');"></div></a>
+                        </div>
+                        <div class="info-article-item">
+                            <div>
+                                <h4>
+                                    <a href="/vn/tin-tuc-su-kien/su-kien/mot-su-kien-hoanh-trang-khong-nen-bo-lo/" title="MỘT SỰ KIỆN HOÀNH TRÁNG KHÔNG NÊN BỎ LỠ" alt="MỘT SỰ KIỆN HOÀNH TRÁNG KHÔNG NÊN BỎ LỠ">MỘT SỰ KIỆN HOÀNH TRÁNG KHÔNG NÊN BỎ LỠ</a>
+                                </h4>
+                                <div class="des-article-item">16.04.2022</div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="col-md-4">
+                    <div class="article-item">
+                        <div class="bg-article-item">
+                            <a href="/vn/tin-tuc-su-kien/su-kien/co-hoi-trao-tay-van-may-trung-lon/" title="CƠ HỘI TRAO TAY - VẬN MAY TRÚNG LỚN" alt="CƠ HỘI TRAO TAY - VẬN MAY TRÚNG LỚN"><div style="background-image: url('/data/2022/04/11/23310518_vqmm.jpg');"></div></a>
+                        </div>
+                        <div class="info-article-item">
+                            <div>
+                                <h4>
+                                    <a href="/vn/tin-tuc-su-kien/su-kien/co-hoi-trao-tay-van-may-trung-lon/" title="CƠ HỘI TRAO TAY - VẬN MAY TRÚNG LỚN" alt="CƠ HỘI TRAO TAY - VẬN MAY TRÚNG LỚN">CƠ HỘI TRAO TAY - VẬN MAY TRÚNG LỚN</a>
+                                </h4><div class="des-article-item">08/04 - 01/05/2022</div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="col-md-4">
+                    <div class="article-item">
+                        <div class="bg-article-item">
+                            <a href="/vn/tin-tuc-su-kien/su-kien/tai-app-giga-tha-ga-chon-qua/" title="TẢI APP GIGA – THẢ GA CHỌN QUÀ" alt="TẢI APP GIGA – THẢ GA CHỌN QUÀ"><div style="background-image: url('/data/2022/04/11/23290288_taiapp.jpg');"></div></a>
+                        </div>
+                        <div class="info-article-item">
+                            <div>
+                                <h4>
+                                    <a href="/vn/tin-tuc-su-kien/su-kien/tai-app-giga-tha-ga-chon-qua/" title="TẢI APP GIGA – THẢ GA CHỌN QUÀ" alt="TẢI APP GIGA – THẢ GA CHỌN QUÀ">TẢI APP GIGA – THẢ GA CHỌN QUÀ</a>
+                                </h4>
+                                <div class="des-article-item">11/04 - 01/05/2022</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="article-item">
+                        <div class="bg-article-item">
+                            <a href="/vn/tin-tuc-su-kien/su-kien/chao-he-ron-rang-san-khuyen-mai-sale-up-to-50-cung-kohnan-japan-fair/" title="CHÀO HÈ RỘN RÀNG SĂN KHUYẾN MÃI - SALE UP TO 50% CÙNG KOHNAN JAPAN FAIR" alt="CHÀO HÈ RỘN RÀNG SĂN KHUYẾN MÃI - SALE UP TO 50% CÙNG KOHNAN JAPAN FAIR">
+                                <div style="background-image: url('/data/2022/04/04/23520224_27772863029836103185955703557192015859416385n.png');"></div>
+                            </a>
+                        </div>
+                        <div class="info-article-item">
+                            <div>
+                                <h4>
+                                    <a href="/vn/tin-tuc-su-kien/su-kien/chao-he-ron-rang-san-khuyen-mai-sale-up-to-50-cung-kohnan-japan-fair/" title="CHÀO HÈ RỘN RÀNG SĂN KHUYẾN MÃI - SALE UP TO 50% CÙNG KOHNAN JAPAN FAIR" alt="CHÀO HÈ RỘN RÀNG SĂN KHUYẾN MÃI - SALE UP TO 50% CÙNG KOHNAN JAPAN FAIR"> CHÀO HÈ RỘN RÀNG SĂN KHUYẾN MÃI - SALE UP TO 50% CÙNG KOHNAN JAPAN...</a>
+                                </h4>
+                                <div class="des-article-item">GIGAMALL</div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="col-md-4">
+                    <div class="article-item">
+                        <div class="bg-article-item">
+                            <a href="/vn/tin-tuc-su-kien/su-kien/tai-app-ngay-nhan-qua-me-say/" title="TẢI APP NGAY NHẬN QÙA MÊ SAY" alt="TẢI APP NGAY NHẬN QÙA MÊ SAY"><div style="background-image: url('/data/2022/03/28/01000973_tai-app2.png');"></div></a>
+                        </div>
+                        <div class="info-article-item">
+                            <div>
+                                <h4>
+                                    <a href="/vn/tin-tuc-su-kien/su-kien/tai-app-ngay-nhan-qua-me-say/" title="TẢI APP NGAY NHẬN QÙA MÊ SAY" alt="TẢI APP NGAY NHẬN QÙA MÊ SAY">TẢI APP NGAY NHẬN QÙA MÊ SAY</a>
+                                </h4>
+                                <div class="des-article-item">26/03 - 10/04/2022</div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="col-md-4">
+                    <div class="article-item">
+                        <div class="bg-article-item">
+                            <a href="/vn/tin-tuc-su-kien/su-kien/cong-bo-ket-qua-workshop-83-den-gigamall-lam-thiep-handmade-gui-tang-nguoi-thuong/" title="CÔNG BỐ KẾT QUẢ WORKSHOP 8/3 - ĐẾN GIGAMALL LÀM THIỆP HANDMADE GỬI TẶNG NGƯỜI THƯƠNG" alt="CÔNG BỐ KẾT QUẢ WORKSHOP 8/3 - ĐẾN GIGAMALL LÀM THIỆP HANDMADE GỬI TẶNG NGƯỜI THƯƠNG"><div style="background-image: url('/data/2022/03/15/18584569_cong-bo.png');"></div></a>
+                        </div>
+                        <div class="info-article-item">
+                            <div>
+                                <h4>
+                                    <a href="/vn/tin-tuc-su-kien/su-kien/cong-bo-ket-qua-workshop-83-den-gigamall-lam-thiep-handmade-gui-tang-nguoi-thuong/" title="CÔNG BỐ KẾT QUẢ WORKSHOP 8/3 - ĐẾN GIGAMALL LÀM THIỆP HANDMADE GỬI TẶNG NGƯỜI THƯƠNG" alt="CÔNG BỐ KẾT QUẢ WORKSHOP 8/3 - ĐẾN GIGAMALL LÀM THIỆP HANDMADE GỬI TẶNG NGƯỜI THƯƠNG"> CÔNG BỐ KẾT QUẢ WORKSHOP 8/3 - ĐẾN GIGAMALL LÀM THIỆP HANDMADE GỬI TẶNG NGƯỜI...</a>
+                                </h4>
+                                <div class="des-article-item">15/03/2022</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><section class="promotions article-list list-large">
+        <div class="container">
+            <h3 class="title-group-home">
+                <a href="/vn/khuyen-mai/" alt="Khuyến mãi">Khuyến mãi</a>
+            </h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="article-item">
+                        <div class="bg-article-item">
+                            <a href="/vn/khuyen-mai/mung-ngay-giai-phong-hong-check-in-noi-xa/" title="MỪNG NGÀY GIẢI PHÓNG - HÓNG CHECK-IN NƠI XA" alt="MỪNG NGÀY GIẢI PHÓNG - HÓNG CHECK-IN NƠI XA"><div style="background-image: url('/data/2022/04/25/02193894_boo1.jpg');"></div></a>
+                        </div>
+                        <div class="info-article-item">
+                            <div>
+                                <h4>
+                                    <a href="/vn/khuyen-mai/mung-ngay-giai-phong-hong-check-in-noi-xa/" title="BOO" alt="MỪNG NGÀY GIẢI PHÓNG - HÓNG CHECK-IN NƠI XA">BOO</a>
+                                </h4>
+                                <div class="des-article-item">L2</div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="col-md-4">
+                    <div class="article-item">
+                        <div class="bg-article-item">
+                            <a href="/vn/khuyen-mai/o-day-co-ban-ao-thun-chi-19k-mung-dai-le/" title="Ở đây có bán áo thun chỉ 19k - MỪNG ĐẠI LỄ" alt="Ở đây có bán áo thun chỉ 19k - MỪNG ĐẠI LỄ"><div style="background-image: url('/data/2022/04/25/02185048_gumac1.jpg');"></div></a>
+                        </div>
+                        <div class="info-article-item">
+                            <div>
+                                <h4>
+                                    <a href="/vn/khuyen-mai/o-day-co-ban-ao-thun-chi-19k-mung-dai-le/" title="GUMAC" alt="Ở đây có bán áo thun chỉ 19k - MỪNG ĐẠI LỄ">GUMAC</a>
+                                </h4>
+                                <div class="des-article-item">L2-09-07</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="article-item">
+                        <div class="bg-article-item">
+                            <a href="/vn/khuyen-mai/mung-dai-le-sale-vo-ke/" title="MỪNG ĐẠI LỄ - SALE VÔ KỂ" alt="MỪNG ĐẠI LỄ - SALE VÔ KỂ"><div style="background-image: url('/data/2022/04/25/02162576_kohnan12.jpg');"></div></a>
+                        </div>
+                        <div class="info-article-item">
+                            <div>
+                                <h4>
+                                    <a href="/vn/khuyen-mai/mung-dai-le-sale-vo-ke/" title="KOHNAN JAPAN" alt="MỪNG ĐẠI LỄ - SALE VÔ KỂ">KOHNAN JAPAN</a>
+                                </h4>
+                                <div class="des-article-item">B1-02</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="article-item">
+                        <div class="bg-article-item">
+                            <a href="/vn/khuyen-mai/-d-/" title="𝐒𝐀𝐋𝐄 𝐓𝐔̛𝐍𝐆 𝐁𝐔̛̀𝐍𝐆 𝐌𝐔̛̀𝐍𝐆 Đ𝐀̣𝐈 𝐋𝐄̂̃ 𝟑𝟎/𝟒 - 𝟎𝟏/𝟓 | 𝐒𝐀𝐋𝐄 𝐔𝐏𝐓𝐎 𝟓𝐎%" alt="𝐒𝐀𝐋𝐄 𝐓𝐔̛𝐍𝐆 𝐁𝐔̛̀𝐍𝐆 𝐌𝐔̛̀𝐍𝐆 Đ𝐀̣𝐈 𝐋𝐄̂̃ 𝟑𝟎/𝟒 - 𝟎𝟏/𝟓 | 𝐒𝐀𝐋𝐄 𝐔𝐏𝐓𝐎 𝟓𝐎%"><div style="background-image: url('/data/2022/04/25/02152348_mat-viet.jpg');"></div></a>
+                        </div>
+                        <div class="info-article-item">
+                            <div>
+                                <h4>
+                                    <a href="/vn/khuyen-mai/-d-/" title="MẮT VIỆT" alt="𝐒𝐀𝐋𝐄 𝐓𝐔̛𝐍𝐆 𝐁𝐔̛̀𝐍𝐆 𝐌𝐔̛̀𝐍𝐆 Đ𝐀̣𝐈 𝐋𝐄̂̃ 𝟑𝟎/𝟒 - 𝟎𝟏/𝟓 | 𝐒𝐀𝐋𝐄 𝐔𝐏𝐓𝐎 𝟓𝐎%">MẮT VIỆT</a>
+                                </h4><div class="des-article-item">L1_28</div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="col-md-4">
+                    <div class="article-item">
+                        <div class="bg-article-item">
+                            <a href="/vn/khuyen-mai/uu-dai-chao-mung-dai-le-304-15/" title="ƯU ĐÃI CHÀO MỪNG ĐẠI LỄ 30/4 - 1/5" alt="ƯU ĐÃI CHÀO MỪNG ĐẠI LỄ 30/4 - 1/5"><div style="background-image: url('/data/2022/04/25/02141394_minigood2.jpg');"></div></a>
+                        </div>
+                        <div class="info-article-item">
+                            <div>
+                                <h4>
+                                    <a href="/vn/khuyen-mai/uu-dai-chao-mung-dai-le-304-15/" title="MINIGOOD" alt="ƯU ĐÃI CHÀO MỪNG ĐẠI LỄ 30/4 - 1/5">MINIGOOD</a>
+                                </h4>
+                                <div class="des-article-item">B1</div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="col-md-4">
+                    <div class="article-item">
+                        <div class="bg-article-item">
+                            <a href="/vn/khuyen-mai/tam-biet-lan-da-kho-sam-hau-covid-chi-tu-400k/" title="Tạm biệt làn da khô sạm hậu covid chỉ từ 400k" alt="Tạm biệt làn da khô sạm hậu covid chỉ từ 400k"><div style="background-image: url('/data/2022/04/25/02131677_nitipon.jpg');"></div></a>
+                        </div><div class="info-article-item"><div><h4><a href="/vn/khuyen-mai/tam-biet-lan-da-kho-sam-hau-covid-chi-tu-400k/" title="NITIPON CLINIC" alt="Tạm biệt làn da khô sạm hậu covid chỉ từ 400k">NITIPON CLINIC</a></h4><div class="des-article-item">L4-08C</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="clip-experience article-list-video list-small">
+        <div class="container">
+            <h3 class="title-group-home">
+                <a href="/vn/tin-tuc-su-kien/clip-trai-nghiem/" alt="Clip trải nghiệm">Clip trải nghiệm</a>
+            </h3>
+            <div class="row">
+                <div class="col-md">
+                    <div class="article-item-video">
+                        <div class="bg-article-item-video">
+                            <a href="/vn/tin-tuc-su-kien/clip-trai-nghiem/kham-pha-cong-vien-khung-long-jpark-cung-quang-vinh-gigamall-vietnam/" title="KHÁM PHÁ CÔNG VIÊN KHỦNG LONG JPARK CÙNG QUANG VINH | GIGAMALL VIETNAM" alt="KHÁM PHÁ CÔNG VIÊN KHỦNG LONG JPARK CÙNG QUANG VINH | GIGAMALL VIETNAM"><div style="background-image: url('/data/2022/03/31/15482931_z330499328684992877fea79ccaeae55ab76ded7678ec7.jpg');"><img class="button_play" src="~/images/video-play-icon.png"></div></a>
+                        </div>
+                        <div class="info-article-item-video">
+                            <h4>
+                                <a href="/vn/tin-tuc-su-kien/clip-trai-nghiem/kham-pha-cong-vien-khung-long-jpark-cung-quang-vinh-gigamall-vietnam/" title="KHÁM PHÁ CÔNG VIÊN KHỦNG LONG JPARK CÙNG QUANG VINH | GIGAMALL VIETNAM" alt="KHÁM PHÁ CÔNG VIÊN KHỦNG LONG JPARK CÙNG QUANG VINH | GIGAMALL VIETNAM"> KHÁM PHÁ CÔNG VIÊN KHỦNG LONG JPARK CÙNG QUANG VINH...</a>
+                            </h4><p class="date-article-item-video">Ngày đăng: 31.03.2022</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="article-item-video">
+                        <div class="bg-article-item-video">
+                            <a href="/vn/tin-tuc-su-kien/clip-trai-nghiem/kham-pha-khu-vui-choi-giai-tri-cong-nghe-tuong-tac-hien-dai-bac-nhat-viet-nam-tai-gigamall/" title="Khám phá Khu vui chơi giải trí Công nghệ Tương tác hiện đại bậc nhất Việt Nam tại Gigamall" alt="Khám phá Khu vui chơi giải trí Công nghệ Tương tác hiện đại bậc nhất Việt Nam tại Gigamall">
+                                <div style="background-image: url('/data/2021/12/21/22343382_thumnailjpw.png');">
+                                    <img class="button_play" src="~/images/video-play-icon.png">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="info-article-item-video">
+                            <h4>
+                                <a href="/vn/tin-tuc-su-kien/clip-trai-nghiem/kham-pha-khu-vui-choi-giai-tri-cong-nghe-tuong-tac-hien-dai-bac-nhat-viet-nam-tai-gigamall/" title="Khám phá Khu vui chơi giải trí Công nghệ Tương tác hiện đại bậc nhất Việt Nam tại Gigamall" alt="Khám phá Khu vui chơi giải trí Công nghệ Tương tác hiện đại bậc nhất Việt Nam tại Gigamall"> Khám phá Khu vui chơi giải trí Công nghệ Tương...</a>
+                            </h4>
+                            <p class="date-article-item-video">Ngày đăng: 21.12.2021</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="article-item-video">
+                        <div class="bg-article-item-video">
+                            <a href="/vn/tin-tuc-su-kien/clip-trai-nghiem/den-gigamal-mua-sam-an-toan-chang-con-lo-toan/" title="ĐẾN GIGAMAL MUA SẮM AN TOÀN - CHẲNG CÒN LO TOAN" alt="ĐẾN GIGAMAL MUA SẮM AN TOÀN - CHẲNG CÒN LO TOAN"><div style="background-image: url('/data/2021/12/21/22331230_z3042507435379d152d1d39fa11b4185e09481166e42e7.jpg');"><img class="button_play" src="~/images/video-play-icon.png"></div></a>
+                        </div>
+                        <div class="info-article-item-video">
+                            <h4>
+                                <a href="/vn/tin-tuc-su-kien/clip-trai-nghiem/den-gigamal-mua-sam-an-toan-chang-con-lo-toan/" title="ĐẾN GIGAMAL MUA SẮM AN TOÀN - CHẲNG CÒN LO TOAN" alt="ĐẾN GIGAMAL MUA SẮM AN TOÀN - CHẲNG CÒN LO TOAN"> ĐẾN GIGAMAL MUA SẮM AN TOÀN - CHẲNG CÒN LO...</a>
+                            </h4>
+                            <p class="date-article-item-video">Ngày đăng: 21.12.2021</p>
+                        </div>
+                    </div>
+                </div><div class="col-md">
+                    <div class="article-item-video">
+                        <div class="bg-article-item-video">
+                            <a href="/vn/tin-tuc-su-kien/clip-trai-nghiem/du-xuan-tan-suu-tai-tttm-gigamall/" title="DU XUÂN TÂN SỬU TẠI TTTM GIGAMALL" alt="DU XUÂN TÂN SỬU TẠI TTTM GIGAMALL"><div style="background-image: url('/data/2021/02/23/11212551_149798982_2683786128577992_3313955803062092601_o.jpg');"><img class="button_play" src="~/images/video-play-icon.png"></div></a>
+                        </div>
+                        <div class="info-article-item-video">
+                            <h4>
+                                <a href="/vn/tin-tuc-su-kien/clip-trai-nghiem/du-xuan-tan-suu-tai-tttm-gigamall/" title="DU XUÂN TÂN SỬU TẠI TTTM GIGAMALL" alt="DU XUÂN TÂN SỬU TẠI TTTM GIGAMALL">DU XUÂN TÂN SỬU TẠI TTTM GIGAMALL</a>
+                            </h4>
+                            <p class="date-article-item-video">Ngày đăng: 23.02.2021</p>
+                        </div>
+                    </div>
+                </div><div class="col-md">
+                    <div class="article-item-video">
+                        <div class="bg-article-item-video">
+                            <a href="/vn/tin-tuc-su-kien/clip-trai-nghiem/dem-nhac-giang-sinh-an-lanh-tai-tttm-gigamall/" title="ĐÊM NHẠC GIÁNG SINH AN LÀNH TẠI TTTM GIGAMALL" alt="ĐÊM NHẠC GIÁNG SINH AN LÀNH TẠI TTTM GIGAMALL"><div style="background-image: url('/data/2021/01/08/11362602_THUMB-GSAL-1920X1080.png');"><img class="button_play" src="~/images/video-play-icon.png"></div></a>
+                        </div>
+                        <div class="info-article-item-video">
+                            <h4>
+                                <a href="/vn/tin-tuc-su-kien/clip-trai-nghiem/dem-nhac-giang-sinh-an-lanh-tai-tttm-gigamall/" title="ĐÊM NHẠC GIÁNG SINH AN LÀNH TẠI TTTM GIGAMALL" alt="ĐÊM NHẠC GIÁNG SINH AN LÀNH TẠI TTTM GIGAMALL">ĐÊM NHẠC GIÁNG SINH AN LÀNH TẠI TTTM GIGAMALL</a>
+                            </h4><p class="date-article-item-video">Ngày đăng: 08.01.2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="instagram">
+        <div class="container">
+            <div class="row">
+                <h3 class="title-group-home"><a>@@GIGAMALL INSTAGRAM</a></h3>
+                <script src="https://snapwidget.com/js/snapwidget.js"></script>
+                <iframe src="https://snapwidget.com/embed/720859" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border: none; overflow: hidden; width: 100%; height: 200px;" id="iFrameResizer0"></iframe>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <p style="margin: 0;">
+                            <img src="~/images/logo-footer.png" alt="GIGAMALL">
+                        </p>
+                        <div class="info-company">
+                            <h3>TRUNG TÂM THƯƠNG MẠI GIGAMALL</h3>
+                            <p>
+                                <img src="~/images/location-icon.png"><span>240-242 Phạm Văn Đồng, P. Hiệp Bình Chánh, Q. Thủ Đức, Tp.HCM</span>
+                            </p><p><img src="~/images/phone-icon.png"><span>(028) 7100 3839 | 7109 3839</span></p><p><img src="~/images/mail-icon.png"><a href="mailto:dvkh@gigamall.com.vn">dvkh@gigamall.com.vn</a></p><div class="operatyon-time">
+                                <p><strong>Thời gian hoạt động</strong></p>
+                                <p>Thứ Hai - Thứ Sáu&nbsp;| 9:30 - 22:00</p>
+                                <p>Thứ Bảy &amp; Chủ Nhật | 9:00 - 22:00</p>
+                            </div><div class="social">
+                                <p>
+                                    <a href="https://www.facebook.com/gigamallvietnam/" target="_blank"><img src="~/images/social-f.png" alt=""></a><a href="https://www.instagram.com/gigamall_vietnam/" target="_blank"><img src="~/images/social-intagram.png" alt=""></a><a href="https://www.youtube.com/channel/UCfO8mX8z8GrP1SQIzzt2o_A?view_as=subscriber" target="_blank"><img src="~/images/social-youtube.png" alt=""></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.781420981458!2d106.71968241474188!3d10.828032492286589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752910b8ffbc9b%3A0xc26e001301184576!2zVFRUTSBHaWdhIG1hbGwgUGjhuqFtIFbEg24gxJDhu5NuZyAtIFRo4bunIMSQ4bupYyAoIFNpw6p1IHRo4buLIFNlbnNlIENpdHkgdnMgQ28ub3B4dHJhICk!5e0!3m2!1sen!2sus!4v1564645858014!5m2!1sen!2sus" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <ul class="link-footer">
+                                <li><a>Thông tin</a></li>
+                                <li><a href="/vn/">Trang chủ</a></li>
+                                <li><a href="/vn/gioi-thieu/" alt="Giới thiệu">Giới thiệu</a></li>
+                                <li><a href="/vn/khuyen-mai/" alt="Khuyến mãi">Khuyến mãi</a></li>
+                                <li><a href="/vn/tin-tuc-su-kien/" alt="Tin tức &amp; Sự kiện">Tin tức &amp; Sự kiện</a></li>
+                                <li><a href="/vn/thuong-hieu/" alt="Thương hiệu">Thương hiệu</a></li>
+                                <li><a href="/vn/thanh-vien/" alt="Thành viên">Thành viên</a></li>
+                                <li><a href="/vn/so-do-tang/" alt="Sơ đồ tầng">Sơ đồ tầng</a></li>
+                                <li><a href="/vn/tien-ich/" alt="Tiện ích">Tiện ích</a></li>
+                                <li><a href="/vn/lien-he/" alt="Liên hệ">Liên hệ</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="link-footer">
+                                <li><a href="/vn/thuong-hieu/" alt="Thương hiệu">Thương hiệu</a></li>
+                                <li><a href="/vn/am-thuc/" alt="Ẩm thực">Ẩm thực</a></li>
+                                <li><a href="/vn/dien-may/" alt="Điện máy">Điện máy</a></li>
+                                <li><a href="/vn/chan-goi-nem-noi-that/" alt="Chăn gối nệm &amp; Nội thất">Chăn gối nệm &amp; Nội thất</a></li>
+                                <li><a href="/vn/giao-duc/" alt="Giáo dục">Giáo dục</a></li>
+                                <li><a href="/vn/my-pham-nuoc-hoa/" alt="Mỹ phẩm &amp; Nước hoa">Mỹ phẩm &amp; Nước hoa</a></li>
+                                <li><a href="/vn/thoi-trang-phu-kien/" alt="Thời trang &amp; Phụ kiện">Thời trang &amp; Phụ kiện</a></li>
+                                <li><a href="/vn/khac/" alt="Khác">Khác</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="link-footer">
+                                <li><a></a></li>
+                                <li><a href="/vn/cua-hang-tien-ich/" alt="Cửa hàng tiện ích">Cửa hàng tiện ích</a></li>
+                                <li><a href="/vn/gia-dung/" alt="Gia dụng">Gia dụng</a></li>
+                                <li><a href="/vn/giai-tri/" alt="Giải trí">Giải trí</a></li>
+                                <li><a href="/vn/lam-dep-suc-khoe/" alt="Làm đẹp &amp; sức khỏe">Làm đẹp &amp; sức khỏe</a></li>
+                                <li><a href="/vn/sieu-thi/" alt="Siêu thị">Siêu thị</a></li>
+                                <li><a href="/vn/the-thao/" alt="Thể thao">Thể thao</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-12 download-app">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div>
+                                        <p>TẢI NGAY</p>
+                                        <p>APP GIGAMALL</p><p>Tích điểm - đổi quà</p><p>Nhận muôn vàn ưu đãi!</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="app">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <img src="~/images/app/IOS-QRC.png"><a href="https://itunes.apple.com/us/app/gigamall-vietnam/id1448013961?ls=1&amp;mt=8" target="_blank"><img src="~/images/app/app-store.png"></a>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <img src="~/images/app/Android.png"><a href="https://play.google.com/store/apps/details?id=com.ms_apptech.gigamall" target="_blank"><img src="~/images/app/google-play.png"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="copy-right">© Bản quyền 2022 của Công ty Cổ phần Đầu tư Thương mại Dịch vụ Gigamall Việt Nam</p>
+    </footer><!-- Subiz -->
+    <script>!function (s, u, b, i, z) { var o, t, r, y; s[i] || (s._sbzaccid = z, s[i] = function () { s[i].q.push(arguments) }, s[i].q = [], s[i]("setAccount", z), r = ["widget.subiz.net", "storage.googleapis" + (t = ".com"), "app.sbz.workers.dev", i + "a" + (o = function (k, t) { var n = t <= 6 ? 5 : o(k, t - 1) + o(k, t - 3); return k !== t ? n : n.toString(32) })(20, 20) + t, i + "b" + o(30, 30) + t, i + "c" + o(40, 40) + t], (y = function (k) { var t, n; s._subiz_init_2094850928430 || r[k] && (t = u.createElement(b), n = u.getElementsByTagName(b)[0], t.async = 1, t.src = "https://" + r[k] + "/sbz/app.js?accid=" + z, n.parentNode.insertBefore(t, n), setTimeout(y, 2e3, k + 1)) })(0)) }(window, document, "script", "subiz", "acqitggajtwogqjmwdpt")</script><!-- End Subiz -->
+
+
+    <script async="" src="https://vcdn.subiz-cdn.com/widget-v4/public/1806f67a77b.app.js"></script><div id="wpwidget">
+        <div class="desktop">
+            <div class="widget-layout widget-layout--right" style="opacity: 1 !important;">
+                <div class="widget-preview widget-preview--right widget-preview--hidden widget-preview--hidden">
+                    <div class="widget-preview--body">
+                        <img alt="widget avatar" class="widget-preview--avatar" src="https://vcdn.subiz-cdn.com/widget-v4/public/assets/img/default_avatar.5b74dc1.png">
+                        <div class="widget-preview--content">
+                            <div class="widget-preview--title">GIGAMALL</div>
+                            <p class="widget-preview--message"></p>
+                        </div>
+                        <div class="widget-preview--btn-close"></div>
+                    </div>
+                    <div class="widget-preview--action">
+                        <div class="widget-preview--action-text">Gửi tin nhắn</div>
+                    </div>
+                </div>
+                <div class="chat-button chat-button--right">
+                    <div class="chat-button--white-bg"></div>
+                    <div class="chat-button--img-container" style="background-image: url(&quot;https://vcdn.subiz-cdn.com/file/bubble_11.svg&quot;) !important; background-repeat: no-repeat !important;"><img width="70" height="70" alt="chat button" class="chat-button--img" src="https://vcdn.subiz-cdn.com/file/bubble_11.svg"></div>
+                </div>
+            </div>
+            <div class="widget-container widget-container--right widget-container--hide">
+                <div class="widget-header widget-header--collapsed">
+                    <div class="widget-header--inner widget-header--inner--collapsed">
+                        <div class="group-avatar group-avatar--secondary">
+                            <div class="d-inline-block pos-relative" data-tooltip="GIGAMALL" data-tooltip-position="bottom">
+                                <img width="35" height="35" alt="agent avatar left" class="avatar group-avatar--agent-left" src="https://vcdn.subiz-cdn.com/file/fiqknupbjfmhmeqgemxw-logo_gigamall__vuong_.jpg">
+                            </div>
+                            <div class="d-inline-block pos-relative" data-tooltip="CSKH" data-tooltip-position="bottom">
+                                <img alt="agent avatar right" width="35" height="35" class="avatar group-avatar--agent-right" src="https://vcdn.subiz-cdn.com/file/fiqknuoplgjsnmugywgm-logo_gigamall__vuong_.jpg">
+                            </div>
+                        </div>
+                        <div class="widget-header--title-container"><div class="widget-header--title">GIGAMALL</div><div class="widget-header--description" title="Agent offline">Agent offline</div></div><div class="widget-header--button widget-header--button-close" data-tooltip="Đóng" data-tooltip-position="bottom"><span class="widget-header--button-close-icon"></span></div>
+                    </div>
+                    <div class="widget-header--inner widget-header--inner--expanded widget-header--inner--hidden">
+                        <div class="widget-header-expand-container">
+                            <div class="widget-header--top-wrapper">
+                                <div class="widget-header--title">GIGAMALL</div>
+                                <div class="widget-header--button widget-header--button-close" data-tooltip="Đóng" data-tooltip-position="bottom"><span class="widget-header--button-close-icon"></span></div>
+                            </div>
+                            <div class="widget_header__body widget_header__body__social">
+                                <img alt="logo" class="social__account_logo" src="https://vcdn.subiz-cdn.com/file/fiqknuorkpibtscqzlkd-logo_gigamall__vuong_.jpg"><div><div class="social__introduction">Chúng tôi sẵn sàng trợ giúp. Vui lòng hỏi chúng tôi bất cứ điều gì hoặc chia sẻ phản hồi của bạn</div><div class="social__links"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-header--inner widget-header--inner--expanded widget-header--inner--hidden">
+                        <div class="widget-header-expand-container">
+                            <div class="widget-header--top-wrapper">
+                                <div class="widget-header--title">GIGAMALL</div>
+                                <div class="widget-header--button widget-header--button-close" data-tooltip="Đóng" data-tooltip-position="bottom"><span class="widget-header--button-close-icon"></span></div>
+                            </div>
+                            <div class="widget_header__body">
+                                <div class="widget-header--avatar-wrapper">
+                                    <div class="group-avatar group-avatar--primary">
+                                        <div class="d-inline-block pos-relative" data-tooltip="GIGAMALL" data-tooltip-position="bottom">
+                                            <img width="35" height="35" alt="agent avatar left" class="avatar group-avatar--agent-left" src="https://vcdn.subiz-cdn.com/file/fiqknupbjfmhmeqgemxw-logo_gigamall__vuong_.jpg">
+                                        </div>
+                                        <div class="d-inline-block pos-relative" data-tooltip="CSKH" data-tooltip-position="bottom"><img alt="agent avatar right" width="35" height="35" class="avatar group-avatar--agent-right" src="https://vcdn.subiz-cdn.com/file/fiqknuoplgjsnmugywgm-logo_gigamall__vuong_.jpg"></div>
+                                    </div>
+                                </div>
+                                <div class="widget-header--title-container">
+                                    <div class="widget-header--description">Chúng tôi sẵn sàng trợ giúp. Vui lòng hỏi chúng tôi bất cứ điều gì hoặc chia sẻ phản hồi của bạn</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-body">
+                    <div class="widget-body--content flex-grow-1 pl-3 pr-3 d-flex flex-column">
+                        <div class="flex-grow-1">
+                            <div class="form mt-3 pl-3 pr-3 pt-3 pb-3 d-flex flex-column">
+                                <div>Chào mừng website của chúng tôi! Bạn hãy hoàn thành những thông tin dưới đây trước khi bắt đầu kết nối với hỗ trợ viên của chúng tôi nhé.</div><div class="pt-2">
+                                    <div><div class="label">Họ và tên<span class="ml-1 red">*</span></div><input class="form-control " type="text"></div><div><div class="label">Số điện thoại<span class="ml-1 red">*</span></div><input class="form-control " type="text"></div>
+                                    <div>
+                                        <div class="label">
+                                            Câu hỏi của bạn
+                                            <span class="ml-1 red">*</span>
+                                        </div>
+                                        <textarea class="form-control" row="4"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="poweredby">
+                            <a href="https://subiz.com.vn/?utm_source=id-acqitggajtwogqjmwdpt&amp;utm_medium=widget&amp;utm_campaign=widget_referral" class="poweredby--text" target="_blank" rel="noreferrer"><img width="14" height="10" class="poweredby--subiz-logo" src="https://vcdn.subiz-cdn.com/widget-v4/public/assets/img/subiz-mono.877e9f5.svg" alt="power by"> Subiz</a>
+                        </div>
+                    </div>
+                    <div class="message-input message-input--preform">
+                        <button class="btn--start-convo">Bắt đầu hội thoại </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<style>
+    .logo {
+        display: inline-block;
+        float: left;
+    }
+
+    .right-header {
+        display: inline-block;
+        float: right;
+    }
+
+        .right-header h2 {
+            text-transform: uppercase;
+        }
+
+    .info-header {
+        text-align: end;
+    }
+</style>
+
