@@ -1,0 +1,1785 @@
+﻿@{ ViewData["Title"] = "Brand"; Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<section class="content-page">
+    <div class="container">
+        <div class="row">
+            <div class="info-group">
+                <h1 class="title-group-home"><a href="/vn/thuong-hieu/" alt="Thương hiệu">Thương hiệu</a></h1>
+            </div>
+            <div class="search-filter">
+                <div>
+                    <div class="search-store-text"><input type="text" id="search_store_text" name="search_store_text" onkeyup="search_store('');" placeholder="Tìm theo tên" /></div>
+                    <div class="search-store-list">
+                        <select style="display: none;" id="search_store_list" name="search_store_list" onchange="search_store('');">
+                            <option value="0">Lọc theo lĩnh vực</option>
+                            <option value="10">Ẩm thực</option>
+                            <option value="20">Cửa hàng tiện ích</option>
+                            <option value="25">Điện máy</option>
+                            <option value="30">Gia dụng</option>
+                            <option value="35">Chăn gối nệm &amp; Nội thất</option>
+                            <option value="40">Giải trí</option>
+                            <option value="50">Giáo dục</option>
+                            <option value="60">Làm đẹp &amp; sức khỏe</option>
+                            <option value="65">Mỹ phẩm &amp; Nước hoa</option>
+                            <option value="70">Siêu thị</option>
+                            <option value="75">Thời trang &amp; Phụ kiện</option>
+                            <option value="80">Thể thao</option>
+                            <option value="99">Khác</option>
+                        </select>
+                        <div class="dropdown">
+                            <button class="btn btn-gigmall dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lọc theo lĩnh vực</button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);">
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="select_store_group('0', 'Lọc theo lĩnh vực', '');">Lọc theo lĩnh vực</a>
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="select_store_group('10', 'Ẩm thực', '');">Ẩm thực</a>
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="select_store_group('20', 'Cửa hàng tiện ích', '');">Cửa hàng tiện ích</a>
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="select_store_group('25', 'Điện máy', '');">Điện máy</a>
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="select_store_group('30', 'Gia dụng', '');">Gia dụng</a>
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="select_store_group('35', 'Chăn gối nệm &amp; Nội thất', '');">Chăn gối nệm &amp; Nội thất</a>
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="select_store_group('40', 'Giải trí', '');">Giải trí</a>
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="select_store_group('50', 'Giáo dục', '');">Giáo dục</a>
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="select_store_group('60', 'Làm đẹp &amp; sức khỏe', '');">Làm đẹp &amp; sức khỏe</a>
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="select_store_group('65', 'Mỹ phẩm &amp; Nước hoa', '');">Mỹ phẩm &amp; Nước hoa</a>
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="select_store_group('70', 'Siêu thị', '');">Siêu thị</a>
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="select_store_group('75', 'Thời trang &amp; Phụ kiện', '');">Thời trang &amp; Phụ kiện</a>
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="select_store_group('80', 'Thể thao', '');">Thể thao</a>
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="select_store_group('99', 'Khác', '');">Khác</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="store-list-content">
+                <div class="search-list-alpha">
+                    <ul class="">
+                        <li class="cat-item active" id="alpha_all">
+                            <a href="javascript:void(0)" onclick="listalpha('ALL');" title="" class="category-label">All</a>
+                        </li>
+                        <li class="cat-item" id="alpha_123"><a href="javascript:void(0)" onclick="listalpha('123');" title="" class="category-label">#</a></li>
+                        <li class="cat-item" id="alpha_a"><a href="javascript:void(0)" onclick="listalpha('A');" title="" class="category-label">A</a></li>
+                        <li class="cat-item" id="alpha_b"><a href="javascript:void(0)" onclick="listalpha('B');" title="" class="category-label">B</a></li>
+                        <li class="cat-item" id="alpha_c"><a href="javascript:void(0)" onclick="listalpha('C');" title="" class="category-label">C</a></li>
+                        <li class="cat-item" id="alpha_d"><a href="javascript:void(0)" onclick="listalpha('D');" title="" class="category-label">D</a></li>
+                        <li class="cat-item" id="alpha_e"><a href="javascript:void(0)" onclick="listalpha('E');" title="" class="category-label">E</a></li>
+                        <li class="cat-item" id="alpha_f"><a href="javascript:void(0)" onclick="listalpha('F');" title="" class="category-label">F</a></li>
+                        <li class="cat-item" id="alpha_g"><a href="javascript:void(0)" onclick="listalpha('G');" title="" class="category-label">G</a></li>
+                        <li class="cat-item" id="alpha_h"><a href="javascript:void(0)" onclick="listalpha('H');" title="" class="category-label">H</a></li>
+                        <li class="cat-item" id="alpha_i"><a href="javascript:void(0)" onclick="listalpha('I');" title="" class="category-label">I</a></li>
+                        <li class="cat-item" id="alpha_j"><a href="javascript:void(0)" onclick="listalpha('J');" title="" class="category-label">J</a></li>
+                        <li class="cat-item" id="alpha_k"><a href="javascript:void(0)" onclick="listalpha('K');" title="" class="category-label">K</a></li>
+                        <li class="cat-item" id="alpha_l"><a href="javascript:void(0)" onclick="listalpha('L');" title="" class="category-label">L</a></li>
+                        <li class="cat-item" id="alpha_m"><a href="javascript:void(0)" onclick="listalpha('M');" title="" class="category-label">M</a></li>
+                        <li class="cat-item" id="alpha_n"><a href="javascript:void(0)" onclick="listalpha('N');" title="" class="category-label">N</a></li>
+                        <li class="cat-item" id="alpha_o"><a href="javascript:void(0)" onclick="listalpha('O');" title="" class="category-label">O</a></li>
+                        <li class="cat-item" id="alpha_p"><a href="javascript:void(0)" onclick="listalpha('P');" title="" class="category-label">P</a></li>
+                        <li class="cat-item" id="alpha_q"><a href="javascript:void(0)" onclick="listalpha('Q');" title="" class="category-label">Q</a></li>
+                        <li class="cat-item" id="alpha_r"><a href="javascript:void(0)" onclick="listalpha('R');" title="" class="category-label">R</a></li>
+                        <li class="cat-item" id="alpha_s"><a href="javascript:void(0)" onclick="listalpha('S');" title="" class="category-label">S</a></li>
+                        <li class="cat-item" id="alpha_t"><a href="javascript:void(0)" onclick="listalpha('T');" title="" class="category-label">T</a></li>
+                        <li class="cat-item" id="alpha_u"><a href="javascript:void(0)" onclick="listalpha('U');" title="" class="category-label">U</a></li>
+                        <li class="cat-item" id="alpha_v"><a href="javascript:void(0)" onclick="listalpha('V');" title="" class="category-label">V</a></li>
+                        <li class="cat-item" id="alpha_w"><a href="javascript:void(0)" onclick="listalpha('W');" title="" class="category-label">W</a></li>
+                        <li class="cat-item" id="alpha_x"><a href="javascript:void(0)" onclick="listalpha('X');" title="" class="category-label">X</a></li>
+                        <li class="cat-item" id="alpha_y"><a href="javascript:void(0)" onclick="listalpha('Y');" title="" class="category-label">Y</a></li>
+                        <li class="cat-item" id="alpha_z"><a href="javascript:void(0)" onclick="listalpha('Z');" title="" class="category-label">Z</a></li>
+                    </ul>
+                </div>
+                <div class="store-list" id="store_list">
+                    <div class="col-store-item store_alpha_w store_floor_30">
+                        <a href="/vn/am-thuc/wrap-roll/" title="WRAP &amp; ROLL" alt="WRAP &amp; ROLL">
+                            <div class="bg-store-item">
+                                @* <img src="/data/2019/09/03/15433129_LOGO-Wrap-_-Roll---600x600.png" alt="LOGO-Wrap-_-Roll---600x600" />*@
+                                <img src="/data/2019/09/03/15433129_LOGO-Wrap-_-Roll---600x600_thumbnail.png" alt="LOGO-Wrap-_-Roll---600x600" />
+                            </div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/wrap-roll/" title="WRAP &amp; ROLL" alt="WRAP &amp; ROLL"><span>WRAP &amp; ROLL</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L3_02</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_b store_floor_40">
+                        <a href="/vn/lam-dep-suc-khoe/bb-wellness/" title="BB WELLNESS" alt="BB WELLNESS">
+                            <div class="bg-store-item">
+                                <img src="/data/2021/03/26/15360393_LOGO-BB-WELLNESS-900X900.jpg" alt="LOGO-BB-WELLNESS-900X900" />
+                            </div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/lam-dep-suc-khoe/bb-wellness/" title="BB WELLNESS" alt="BB WELLNESS"><span>BB WELLNESS</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-09D</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_c store_floor_0">
+                        <a href="/vn/am-thuc/chuk-chuk/" title="CHUK CHUK" alt="CHUK CHUK">
+                            <div class="bg-store-item"><img src="/data/2021/11/30/12190067_logochukchuk.jpg" alt="logochukchuk" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/chuk-chuk/" title="CHUK CHUK" alt="CHUK CHUK"><span>CHUK CHUK</span></a>
+                            <div><p class="floor-map-item"></p></div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_v store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/viettien-house/" title="VIETTIEN HOUSE" alt="VIETTIEN HOUSE">
+                            <div class="bg-store-item"><img src="/data/2021/03/26/15385835_LOGO-VIETTIEN-900X900.png" alt="LOGO-VIETTIEN-900X900" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/viettien-house/" title="VIETTIEN HOUSE" alt="VIETTIEN HOUSE"><span>VIETTIEN HOUSE</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1_15</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_j store_floor_40">
+                        <a href="/vn/khac/jbl-vietnam/" title="JBL VIETNAM" alt="JBL VIETNAM">
+                            <div class="bg-store-item"><img src="/data/2019/09/06/17042372_logo-JBL.jpg" alt="logo-JBL" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/khac/jbl-vietnam/" title="JBL VIETNAM" alt="JBL VIETNAM"><span>JBL VIETNAM</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-26AB</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_m store_floor_10">
+                        <a href="/vn/am-thuc/mcdonald39s/" title="McDonald's" alt="McDonald's">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/11491513_LOGO-McDonald_s.jpg" alt="LOGO-McDonald_s" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/mcdonald39s/" title="McDonald's" alt="McDonald's"><span>McDonald's</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1_21</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_p store_floor_10">
+                        <a href="/vn/am-thuc/passio/" title="PASSIO" alt="PASSIO">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/12011897_LOGO-PASSIO-500x500.jpg" alt="LOGO-PASSIO-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/passio/" title="PASSIO" alt="PASSIO"><span>PASSIO</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># Sảnh ngoài L1-03</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_p store_floor_30">
+                        <a href="/vn/am-thuc/papparoti/" title="PAPPAROTI" alt="PAPPAROTI">
+                            <div class="bg-store-item">
+                                <img src="/data/2021/03/26/15405841_LOGO-PAPPAROTO-900X900.png" alt="LOGO-PAPPAROTO-900X900" />
+                            </div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/papparoti/" title="PAPPAROTI" alt="PAPPAROTI"><span>PAPPAROTI</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L3-07</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_p store_floor_40">
+                        <a href="/vn/am-thuc/padthai/" title="PADTHAI" alt="PADTHAI">
+                            <div class="bg-store-item"><img src="/data/2019/12/30/10415489_40520196_1146984995452538_7183842920120713216_n.png" alt="40520196_1146984995452538_7183842920120713216_n" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/padthai/" title="PADTHAI" alt="PADTHAI"><span>PADTHAI</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4_09A</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_p store_floor_40">
+                        <a href="/vn/lam-dep-suc-khoe/promk/" title="PROMK" alt="PROMK">
+                            <div class="bg-store-item"><img src="/data/2021/03/25/11064848_LOGO-PROMK-900X900.png" alt="LOGO-PROMK-900X900" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/lam-dep-suc-khoe/promk/" title="PROMK" alt="PROMK"><span>PROMK</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L04-05B</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_l store_floor_0">
+                        <a href="/vn/chan-goi-nem-noi-that/lasante39/" title="LASANTE'" alt="LASANTE'">
+                            <div class="bg-store-item"><img src="/data/2021/03/19/13562388_LOGO-LASANTE-900X900.png" alt="LOGO-LASANTE-900X900" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/chan-goi-nem-noi-that/lasante39/" title="LASANTE'" alt="LASANTE'"><span>LASANTE'</span></a>
+                            <div><p class="floor-map-item"></p></div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_b store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/baa-baby/" title="BAA Baby" alt="BAA Baby">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/16164216_LOGO-BAA-BABY.png" alt="LOGO-BAA-BABY" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/baa-baby/" title="BAA Baby" alt="BAA Baby"><span>BAA Baby</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-22</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_d store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/doji/" title="DOJI" alt="DOJI">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/16350118_LOGO-DOJI.png" alt="LOGO-DOJI" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/doji/" title="DOJI" alt="DOJI"><span>DOJI</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_g store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/gumac/" title="GUMAC" alt="GUMAC">
+                            <div class="bg-store-item"><img src="/data/2021/03/26/15475727_LOGO-GUMAC-900X900.png" alt="LOGO-GUMAC-900X900" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/gumac/" title="GUMAC" alt="GUMAC"><span>GUMAC</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-09-07</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_k store_floor_40">
+                        <a href="/vn/thoi-trang-phu-kien/kv-style/" title="K&amp;V STYLE" alt="K&amp;V STYLE">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/17124956_logo-K-&amp;V-500x500.jpg" alt="logo-K-&amp;V-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/kv-style/" title="K&amp;V STYLE" alt="K&amp;V STYLE"><span>K&amp;V STYLE</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-31</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_k store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/king-style/" title="KING STYLE" alt="KING STYLE">
+                            <div class="bg-store-item"><img src="/data/2021/03/26/15550799_LOGO-KING-STYLE-900X900.png" alt="LOGO-KING-STYLE-900X900" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/king-style/" title="KING STYLE" alt="KING STYLE"><span>KING STYLE</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-09-1A</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_g store_floor_40">
+                        <a href="/vn/am-thuc/galbi-house/" title="GALBI HOUSE" alt="GALBI HOUSE">
+                            <div class="bg-store-item"><img src="/data/2021/03/24/14301420_LOGO-GALBI-HOUSE-900X900.png" alt="LOGO-GALBI-HOUSE-900X900" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/galbi-house/" title="GALBI HOUSE" alt="GALBI HOUSE"><span>GALBI HOUSE</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4_09_BC</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_m store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/mat-viet/" title="MẮT VIỆT" alt="MẮT VIỆT">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/15284478_LOGO-MAT-VIET-500x500.jpg" alt="LOGO-MAT-VIET-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/mat-viet/" title="MẮT VIỆT" alt="MẮT VIỆT"><span>MẮT VIỆT</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1_28</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_m store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/megane-prince/" title="MEGANE PRINCE" alt="MEGANE PRINCE">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/15321334_LOGO-MEGANE-PRINCE-500x500.jpg" alt="LOGO-MEGANE-PRINCE-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/megane-prince/" title="MEGANE PRINCE" alt="MEGANE PRINCE"><span>MEGANE PRINCE</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1_07</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_n store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/namu/" title="NAMU" alt="NAMU">
+                            <div class="bg-store-item">
+                                <img src="/data/2019/11/26/15400373_LOGO-NAMU-500x500.jpg" alt="LOGO-NAMU-500x500" />
+                            </div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/namu/" title="NAMU" alt="NAMU"><span>NAMU</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2_09_06</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_n store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/noir/" title="NOIR" alt="NOIR">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/15472207_LOGO-NOIR-500x500.jpg" alt="LOGO-NOIR-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/noir/" title="NOIR" alt="NOIR"><span>NOIR</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1_09</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_o store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/onoff/" title="ONOFF" alt="ONOFF">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/15505098_LOGO-ONOFF-500x500.jpg" alt="LOGO-ONOFF-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/onoff/" title="ONOFF" alt="ONOFF"><span>ONOFF</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2_09_23</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_s store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/sunday-shoes/" title="SUNDAY SHOES" alt="SUNDAY SHOES">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/16215378_LOGO-SUNDAY-SHOES-500X500.jpg" alt="LOGO-SUNDAY-SHOES-500X500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/sunday-shoes/" title="SUNDAY SHOES" alt="SUNDAY SHOES"><span>SUNDAY SHOES</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2_09_20</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_n store_floor_50">
+                        <a href="/vn/am-thuc/nha-hang-lau-haidilao/" title="NHÀ HÀNG LẨU HAIDILAO" alt="NHÀ HÀNG LẨU HAIDILAO">
+                            <div class="bg-store-item"><img src="/data/2020/10/19/16180362_LOGO-HAIDILAO-900X900.png" alt="LOGO-HAIDILAO-900X900" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/nha-hang-lau-haidilao/" title="NHÀ HÀNG LẨU HAIDILAO" alt="NHÀ HÀNG LẨU HAIDILAO"><span>NHÀ HÀNG LẨU HAIDILAO</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L5_07</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_d store_floor_40">
+                        <a href="/vn/thoi-trang-phu-kien/determinant/" title="DETERMINANT" alt="DETERMINANT">
+                            <div class="bg-store-item"><img src="/data/2020/12/04/16120444_LOGO-DETERMINANT-900X900.jpg" alt="LOGO-DETERMINANT-900X900" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/determinant/" title="DETERMINANT" alt="DETERMINANT"><span>DETERMINANT</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-26C</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_k store_floor_40">
+                        <a href="/vn/chan-goi-nem-noi-that/kymdan/" title="KYMDAN" alt="KYMDAN">
+                            <div class="bg-store-item"><img src="/data/2021/03/01/11133371_LOGO-KYMDAN-900X900.png" alt="LOGO-KYMDAN-900X900" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/chan-goi-nem-noi-that/kymdan/" title="KYMDAN" alt="KYMDAN"><span>KYMDAN</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4 - 08A</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_v store_floor_40">
+                        <a href="/vn/chan-goi-nem-noi-that/vua-nem/" title="VUA NỆM" alt="VUA NỆM">
+                            <div class="bg-store-item"><img src="/data/2021/03/19/14493914_LOGO-VUA-NỆM-900X900.jpg" alt="LOGO-VUA-NỆM-900X900" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/chan-goi-nem-noi-that/vua-nem/" title="VUA NỆM" alt="VUA NỆM"><span>VUA NỆM</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-15B</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_g store_floor_50">
+                        <a href="/vn/am-thuc/gong-cha/" title="Gong Cha" alt="Gong Cha">
+                            <div class="bg-store-item"><img src="/data/2019/09/17/17110685_LOGO-GONG-CHA-500x500.jpg" alt="LOGO-GONG-CHA-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/gong-cha/" title="Gong Cha" alt="Gong Cha"><span>Gong Cha</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L5-20</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_n store_floor_40">
+                        <a href="/vn/lam-dep-suc-khoe/nitipon-clinic/" title="NITIPON CLINIC" alt="NITIPON CLINIC">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/15242423_logo-nitipon-500x500.png" alt="logo-nitipon-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/lam-dep-suc-khoe/nitipon-clinic/" title="NITIPON CLINIC" alt="NITIPON CLINIC"><span>NITIPON CLINIC</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-08C</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_c store_floor_50">
+                        <a href="/vn/am-thuc/chang-kang-kung/" title="Chang Kang Kung" alt="Chang Kang Kung">
+                            <div class="bg-store-item"><img src="/data/2019/09/17/16254239_LOGO-CHANG-KANG-KUNG-500x500.jpg" alt="LOGO-CHANG-KANG-KUNG-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/chang-kang-kung/" title="Chang Kang Kung" alt="Chang Kang Kung"><span>Chang Kang Kung</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L5-06</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_p store_floor_9">
+                        <a href="/vn/am-thuc/pizza-hut/" title="PIZZA HUT" alt="PIZZA HUT">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/13434233_LOGO-PIZZA-HUT-500x500.jpg" alt="LOGO-PIZZA-HUT-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/pizza-hut/" title="PIZZA HUT" alt="PIZZA HUT"><span>PIZZA HUT</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># B1</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_c store_floor_40">
+                        <a href="/vn/lam-dep-suc-khoe/california-fitness-yoga/" title="California Fitness &amp; Yoga" alt="California Fitness &amp; Yoga">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/15195446_logo-cali-500x500.jpg" alt="logo-cali-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/lam-dep-suc-khoe/california-fitness-yoga/" title="California Fitness &amp; Yoga" alt="California Fitness &amp; Yoga"><span>California Fitness &amp; Yoga</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-01</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_c store_floor_30">
+                        <a href="/vn/sieu-thi/coopxtra/" title="Co.opXtra" alt="Co.opXtra">
+                            <div class="bg-store-item"><img src="/data/2019/09/06/16392596_LOGO-COOPXTRA_500x500.jpg" alt="LOGO-COOPXTRA_500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/sieu-thi/coopxtra/" title="Co.opXtra" alt="Co.opXtra"><span>Co.opXtra</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L3-01</a><a href="/vn/so-do-tang/"># L2-01</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_g store_floor_20">
+                        <a href="/vn/khac/gojoy/" title="GOJOY" alt="GOJOY">
+                            <div class="bg-store-item"><img src="/data/2019/09/06/16581208_LOGO-GOJOY-500x500.jpg" alt="LOGO-GOJOY-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/khac/gojoy/" title="GOJOY" alt="GOJOY"><span>GOJOY</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-11</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_l store_floor_10">
+                        <a href="/vn/khac/gojoy/" title="GOJOY" alt="GOJOY">
+                            <div class="bg-store-item"><img src="/data/2019/09/06/16581208_LOGO-GOJOY-500x500.jpg" alt="LOGO-GOJOY-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/loc-phuc-fine-jewelry/" title="LỘC PHÚC FINE JEWELRY" alt="LỘC PHÚC FINE JEWELRY"><span>LỘC PHÚC FINE JEWELRY</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1_35</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_h store_floor_40">
+                        <a href="/vn/am-thuc/hokkaido-baked-cheese-tart/" title="Hokkaido Baked Cheese Tart" alt="Hokkaido Baked Cheese Tart">
+                            <div class="bg-store-item"><img src="/data/2019/09/17/17331776_LOGO-HOKKAIDO-500x500.jpg" alt="LOGO-HOKKAIDO-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/hokkaido-baked-cheese-tart/" title="Hokkaido Baked Cheese Tart" alt="Hokkaido Baked Cheese Tart"><span>Hokkaido Baked Cheese Tart</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-21B</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_i store_floor_40">
+                        <a href="/vn/giao-duc/ila-vietnam/" title="ILA Vietnam" alt="ILA Vietnam">
+                            <div class="bg-store-item"><img src="/data/2018/11/23/15324409_ila-logowhite-01.png" alt="ila-logowhite-01" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/giao-duc/ila-vietnam/" title="ILA Vietnam" alt="ILA Vietnam"><span>ILA Vietnam</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-07</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_k store_floor_50">
+                        <a href="/vn/am-thuc/kfc/" title="KFC" alt="KFC">
+                            <div class="bg-store-item"><img src="/data/2019/09/17/18124154_LOGO-KFC-500x500.jpg" alt="LOGO-KFC-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/kfc/" title="KFC" alt="KFC"><span>KFC</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L5-12</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_o store_floor_40">
+                        <a href="/vn/lam-dep-suc-khoe/ogawa/" title="OGAWA" alt="OGAWA">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/15173555_logo-ogawa-500x500.jpg" alt="logo-ogawa-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/lam-dep-suc-khoe/ogawa/" title="OGAWA" alt="OGAWA"><span>OGAWA</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-25</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_s store_floor_40">
+                        <a href="/vn/lam-dep-suc-khoe/salena/" title="Salena" alt="Salena">
+                            <div class="bg-store-item"><img src="/data/2018/11/23/16032570_logo-salena.png" alt="logo-salena" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/lam-dep-suc-khoe/salena/" title="Salena" alt="Salena"><span>Salena</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-30</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_j store_floor_9">
+                        <a href="/vn/am-thuc/jollibee/" title="JOLLIBEE" alt="JOLLIBEE">
+                            <div class="bg-store-item"><img src="/data/2019/05/06/09314542_logo-jollibee-500x500.jpg" alt="logo-jollibee-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/jollibee/" title="JOLLIBEE" alt="JOLLIBEE"><span>JOLLIBEE</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># B1-01B3</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_n store_floor_40">
+                        <a href="/vn/thoi-trang-phu-kien/natu/" title="NATU" alt="NATU">
+                            <div class="bg-store-item"><img src="/data/2021/03/19/14545284_LOGO-NATU-900X900.png" alt="LOGO-NATU-900X900" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/natu/" title="NATU" alt="NATU"><span>NATU</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-23</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_a store_floor_9">
+                        <a href="/vn/gia-dung/aeon-bicycle-shop/" title="AEON BICYCLE SHOP" alt="AEON BICYCLE SHOP">
+                            <div class="bg-store-item"><img src="/data/2018/12/11/20354652_aeon-bicycle-shop-logo.jpg" alt="aeon-bicycle-shop-logo" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/gia-dung/aeon-bicycle-shop/" title="AEON BICYCLE SHOP" alt="AEON BICYCLE SHOP"><span>AEON BICYCLE SHOP</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># B1-05</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_a store_floor_40">
+                        <a href="/vn/gia-dung/aeon-pet/" title="Aeon Pet" alt="Aeon Pet">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/13594682_logo-aeon-pet.jpg" alt="logo-aeon-pet" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/gia-dung/aeon-pet/" title="Aeon Pet" alt="Aeon Pet"><span>Aeon Pet</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-13</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_a store_floor_9">
+                        <a href="/vn/my-pham-nuoc-hoa/aeon-wellness/" title="AEON WELLNESS" alt="AEON WELLNESS">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/15084640_logo-aeon-wellness-500x500.jpg" alt="logo-aeon-wellness-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/my-pham-nuoc-hoa/aeon-wellness/" title="AEON WELLNESS" alt="AEON WELLNESS"><span>AEON WELLNESS</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># B1-04</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_d store_floor_9">
+                        <a href="/vn/cua-hang-tien-ich/daiso-japan/" title="DAISO JAPAN" alt="DAISO JAPAN">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/14164896_logo-daiso-jp-500x500.jpg" alt="logo-daiso-jp-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/cua-hang-tien-ich/daiso-japan/" title="DAISO JAPAN" alt="DAISO JAPAN"><span>DAISO JAPAN</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># B1-05</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_đ store_floor_9">
+                        <a href="/vn/gia-dung/dien-may-cho-lon/" title="Điện máy Chợ Lớn" alt="Điện máy Chợ Lớn">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/13560536_logo-dien-may-cho-lon-1000x1000.jpg" alt="logo-dien-may-cho-lon-1000x1000" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/gia-dung/dien-may-cho-lon/" title="Điện máy Chợ Lớn" alt="Điện máy Chợ Lớn"><span>Điện máy Chợ Lớn</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># B1-06</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_f store_floor_40">
+                        <a href="/vn/gia-dung/fuji-yataka/" title="Fuji - Yataka" alt="Fuji - Yataka">
+                            <div class="bg-store-item">
+                                <img src="/data/2019/09/05/15482636_LOGO-FUJI-LUXURY-500x500.jpg" alt="LOGO-FUJI-LUXURY-500x500" />
+                            </div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/gia-dung/fuji-yataka/" title="Fuji - Yataka" alt="Fuji - Yataka"><span>Fuji - Yataka</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-06A</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_k store_floor_50">
+                        <a href="/vn/am-thuc/kichikichi-lau-bang-chuyen/" title="KICHI-KICHI - LẨU BĂNG CHUYỀN" alt="KICHI-KICHI - LẨU BĂNG CHUYỀN">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/10431320_Logo_Kichi-kichi-250-x-250.jpg" alt="Logo_Kichi-kichi-250-x-250" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/kichikichi-lau-bang-chuyen/" title="KICHI-KICHI - LẨU BĂNG CHUYỀN" alt="KICHI-KICHI - LẨU BĂNG CHUYỀN"><span>KICHI-KICHI - LẨU BĂNG CHUYỀN</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L5-15</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_g store_floor_50">
+                        <a href="/vn/am-thuc/gogi-house/" title="GOGI HOUSE" alt="GOGI HOUSE">
+                            <div class="bg-store-item"><img src="/data/2019/09/17/17081314_LOGO-GOGI-HOUSE-500x500.jpg" alt="LOGO-GOGI-HOUSE-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/gogi-house/" title="GOGI HOUSE" alt="GOGI HOUSE"><span>GOGI HOUSE</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L5-14</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_s store_floor_50">
+                        <a href="/vn/am-thuc/sumo-yakiniku/" title="SUMO YAKINIKU" alt="SUMO YAKINIKU">
+                            <div class="bg-store-item"><img src="/data/2018/12/12/09344761_hinh-logo-tren-website-250-x-250-pixel.jpg" alt="hinh-logo-tren-website-250-x-250-pixel" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/sumo-yakiniku/" title="SUMO YAKINIKU" alt="SUMO YAKINIKU"><span>SUMO YAKINIKU</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L5-16-17</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_y store_floor_50">
+                        <a href="/vn/am-thuc/yu-tang/" title="YU TANG" alt="YU TANG">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/14585700_LOGO-YU-TANG-500x500.png" alt="LOGO-YU-TANG-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/yu-tang/" title="YU TANG" alt="YU TANG"><span>YU TANG</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L5-18</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_m store_floor_50">
+                        <a href="/vn/am-thuc/manwah/" title="MANWAH" alt="MANWAH">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/11392654_LOGO-MANWAH-500x500.jpg" alt="LOGO-MANWAH-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/manwah/" title="MANWAH" alt="MANWAH"><span>MANWAH</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L5-13</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_k store_floor_9">
+                        <a href="/vn/gia-dung/kohnan-japan/" title="KOHNAN JAPAN" alt="KOHNAN JAPAN">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/10434690_logo-kohnan-500x500.jpg" alt="logo-kohnan-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/gia-dung/kohnan-japan/" title="KOHNAN JAPAN" alt="KOHNAN JAPAN"><span>KOHNAN JAPAN</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># B1-02</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_l store_floor_50">
+                        <a href="/vn/am-thuc/long-monaco/" title="LONG MONACO" alt="LONG MONACO">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/11263717_LOGO-LONG-MONACO-500x500.jpg" alt="LOGO-LONG-MONACO-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/long-monaco/" title="LONG MONACO" alt="LONG MONACO"><span>LONG MONACO</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L5-19</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_c store_floor_10">
+                        <a href="/vn/cua-hang-tien-ich/cheers/" title="CHEERS" alt="CHEERS">
+                            <div class="bg-store-item"><img src="/data/2019/09/06/16270696_LOGO-CHEERS.png" alt="LOGO-CHEERS" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/cua-hang-tien-ich/cheers/" title="CHEERS" alt="CHEERS"><span>CHEERS</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-17A</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_p store_floor_40">
+                        <a href="/vn/am-thuc/phuc-long/" title="Phúc Long" alt="Phúc Long">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/12144388_LOGO-PHUC-LONG-500x500.jpg" alt="LOGO-PHUC-LONG-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/phuc-long/" title="Phúc Long" alt="Phúc Long"><span>Phúc Long</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-08B</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_g store_floor_30">
+                        <a href="/vn/am-thuc/grill-cheer/" title="Grill &amp; Cheer" alt="Grill &amp; Cheer">
+                            <div class="bg-store-item"><img src="/data/2019/09/17/17163666_LOGO-GRILL-_-CHEER-500x500.png" alt="LOGO-GRILL-_-CHEER-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/grill-cheer/" title="Grill &amp; Cheer" alt="Grill &amp; Cheer"><span>Grill &amp; Cheer</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L3_10</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_t store_floor_50">
+                        <a href="/vn/giai-tri/tiniworld/" title="tiNiWorld" alt="tiNiWorld">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/15440586_logo-tiniworld-500x500.jpg" alt="logo-tiniworld-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/giai-tri/tiniworld/" title="tiNiWorld" alt="tiNiWorld"><span>tiNiWorld</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L5-01</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_t store_floor_10">
+                        <a href="/vn/am-thuc/texas-chicken/" title="TEXAS CHICKEN" alt="TEXAS CHICKEN">
+                            <div class="bg-store-item"><img src="/data/2020/12/03/15503130_LOGO-TEXAS-CHICKEN-900X900.jpg" alt="LOGO-TEXAS-CHICKEN-900X900" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/texas-chicken/" title="TEXAS CHICKEN" alt="TEXAS CHICKEN"><span>TEXAS CHICKEN</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-01-02</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_e store_floor_40">
+                        <a href="/vn/my-pham-nuoc-hoa/euro-viet-perfumery-and-city-color/" title="EURO VIET PERFUMERY AND CITY COLOR" alt="EURO VIET PERFUMERY AND CITY COLOR">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/16162983_logo-viet-perfumery-500x500.jpg" alt="logo-viet-perfumery-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/my-pham-nuoc-hoa/euro-viet-perfumery-and-city-color/" title="EURO VIET PERFUMERY AND CITY COLOR" alt="EURO VIET PERFUMERY AND CITY COLOR"><span>EURO VIET PERFUMERY AND CITY COLOR</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_m store_floor_40">
+                        <a href="/vn/giai-tri/my-kingdom/" title="MY KINGDOM" alt="MY KINGDOM">
+                            <div class="bg-store-item"><img src="/data/2019/09/05/18030306_LOGO-MYKINGDOOM-500x500.jpg" alt="LOGO-MYKINGDOOM-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/giai-tri/my-kingdom/" title="MY KINGDOM" alt="MY KINGDOM"><span>MY KINGDOM</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-12</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_s store_floor_9">
+                        <a href="/vn/am-thuc/sukiya/" title="SUKIYA" alt="SUKIYA">
+                            <div class="bg-store-item"><img src="/data/2019/05/06/09483240_logo-sukiya-500x500.jpg" alt="logo-sukiya-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/sukiya/" title="SUKIYA" alt="SUKIYA"><span>SUKIYA</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># B1</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_d store_floor_50">
+                        <a href="/vn/am-thuc/dolpansam/" title="DOLPANSAM" alt="DOLPANSAM">
+                            <div class="bg-store-item"><img src="/data/2019/09/17/16483013_LOGO-DOLPANSAM-500x500.jpg" alt="LOGO-DOLPANSAM-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/dolpansam/" title="DOLPANSAM" alt="DOLPANSAM"><span>DOLPANSAM</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L5-02-03</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_h store_floor_50">
+                        <a href="/vn/am-thuc/hotpot-story/" title="HOTPOT STORY" alt="HOTPOT STORY">
+                            <div class="bg-store-item"><img src="/data/2019/09/17/17502307_LOGO-HOTPOT-STORY-500x500.jpg" alt="LOGO-HOTPOT-STORY-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/hotpot-story/" title="HOTPOT STORY" alt="HOTPOT STORY"><span>HOTPOT STORY</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L5-04</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_k store_floor_50">
+                        <a href="/vn/am-thuc/king-bbq/" title="KING BBQ" alt="KING BBQ">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/10464991_LOGO-KING-BBQ-500x500.jpg" alt="LOGO-KING-BBQ-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/king-bbq/" title="KING BBQ" alt="KING BBQ"><span>KING BBQ</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L5-05</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_m store_floor_50">
+                        <a href="/vn/am-thuc/meiwei/" title="MEIWEI" alt="MEIWEI">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/11524080_LOGO-MEIWEI-500x500.jpg" alt="LOGO-MEIWEI-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/meiwei/" title="MEIWEI" alt="MEIWEI"><span>MEIWEI</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L5-10</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_s store_floor_50">
+                        <a href="/vn/am-thuc/sushi-kei/" title="SUSHI KEI" alt="SUSHI KEI">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/14310597_LOGO-SUSHI-KEI-500x500.jpg" alt="LOGO-SUSHI-KEI-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/sushi-kei/" title="SUSHI KEI" alt="SUSHI KEI"><span>SUSHI KEI</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L5-11</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_c store_floor_60">
+                        <a href="/vn/giai-tri/cgv/" title="CGV" alt="CGV">
+                            <div class="bg-store-item">
+                                <img src="/data/2019/05/06/11365490_logo-cgv-500x500.jpg" alt="logo-cgv-500x500" />
+                            </div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/giai-tri/cgv/" title="CGV" alt="CGV"><span>CGV</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L6-08</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_t store_floor_40">
+                        <a href="/vn/lam-dep-suc-khoe/taj/" title="TAJ" alt="TAJ">
+                            <div class="bg-store-item">
+                                <img src="/data/2019/11/26/16185103_LOGO-TAJ-500x500.jpg" alt="LOGO-TAJ-500x500" />
+                            </div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/lam-dep-suc-khoe/taj/" title="TAJ" alt="TAJ"><span>TAJ</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4_28</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_j store_floor_60">
+                        <a href="/vn/giai-tri/jp-bowling-game-center/" title="JP BOWLING GAME CENTER" alt="JP BOWLING GAME CENTER">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/15373632_logojpbowlinggamecenter.png" alt="logojpbowlinggamecenter" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/giai-tri/jp-bowling-game-center/" title="JP BOWLING GAME CENTER" alt="JP BOWLING GAME CENTER"><span>JP BOWLING GAME CENTER</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L6-01-02</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_j store_floor_60">
+                        <a href="/vn/giai-tri/jp-world/" title="JP WORLD" alt="JP WORLD">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/15350153_logo-jp-world-500x500.jpg" alt="logo-jp-world-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/giai-tri/jp-world/" title="JP WORLD" alt="JP WORLD"><span>JP WORLD</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L6-05-06-07</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_r store_floor_60">
+                        <a href="/vn/giai-tri/rainbow-fun/" title="RAINBOW FUN" alt="RAINBOW FUN">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/15323801_logorainbowfun.png" alt="logorainbowfun" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/giai-tri/rainbow-fun/" title="RAINBOW FUN" alt="RAINBOW FUN"><span>RAINBOW FUN</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L6-03-04</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_t store_floor_0">
+                        <a href="/vn/khac/trung-tam-thuong-mai-sense-city-pham-van-dong/" title="Trung tâm thương mại Sense City Phạm Văn Đồng" alt="Trung tâm thương mại Sense City Phạm Văn Đồng">
+                            <div class="bg-store-item"><img src="/data/2018/12/20/15541785_logo-sensecity-01.png" alt="logo-sensecity-01" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/khac/trung-tam-thuong-mai-sense-city-pham-van-dong/" title="Trung tâm thương mại Sense City Phạm Văn Đồng" alt="Trung tâm thương mại Sense City Phạm Văn Đồng">
+                                <span>Trung tâm thương mại Sense City Phạm Văn Đồng</span>
+                            </a>
+                            <div><p class="floor-map-item"></p></div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_a store_floor_10">
+                        <a href="/vn/the-thao/adidas/" title="ADIDAS" alt="ADIDAS">
+                            <div class="bg-store-item"><img src="/data/2019/09/05/14465361_LOGO-ADIDAS-500x500.jpg" alt="LOGO-ADIDAS-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/the-thao/adidas/" title="ADIDAS" alt="ADIDAS"><span>ADIDAS</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-12</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_a store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/aldo/" title="ALDO" alt="ALDO">
+                            <div class="bg-store-item"><img src="/data/2019/05/06/13414279_logo-aldo-500x500.jpg" alt="logo-aldo-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/aldo/" title="ALDO" alt="ALDO"><span>ALDO</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-11</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_a store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/an-phuoc/" title="AN PHƯỚC" alt="AN PHƯỚC">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/16125010_LOGO-ANPHUOC-500x500.jpg" alt="LOGO-ANPHUOC-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/an-phuoc/" title="AN PHƯỚC" alt="AN PHƯỚC"><span>AN PHƯỚC</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-26</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_c store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/canifa/" title="CANIFA" alt="CANIFA">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/16294915_LOGO-CANIFA-500x500.jpg" alt="LOGO-CANIFA-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/canifa/" title="CANIFA" alt="CANIFA"><span>CANIFA</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-16</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_f store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/fitflop/" title="FITFLOP" alt="FITFLOP">
+                            <div class="bg-store-item"><img src="/data/2019/05/06/15400917_logo-fotflop-500x500.jpg" alt="logo-fotflop-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/fitflop/" title="FITFLOP" alt="FITFLOP"><span>FITFLOP</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-24</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_p store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/pierre-cardin/" title="PIERRE CARDIN" alt="PIERRE CARDIN">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/15583427_LOGO-PIERRE-CARDIN-V3-500x500.png" alt="LOGO-PIERRE-CARDIN-V3-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/pierre-cardin/" title="PIERRE CARDIN" alt="PIERRE CARDIN"><span>PIERRE CARDIN</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-05</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_g store_floor_10">
+                        <a href="/vn/lam-dep-suc-khoe/guardian/" title="GUARDIAN" alt="GUARDIAN">
+                            <div class="bg-store-item"><img src="/data/2019/05/06/14580936_logo-guardian-500x500.jpg" alt="logo-guardian-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/lam-dep-suc-khoe/guardian/" title="GUARDIAN" alt="GUARDIAN"><span>GUARDIAN</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-19</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_h store_floor_10">
+                        <a href="/vn/am-thuc/highlands-coffee/" title="HIGHLANDS COFFEE" alt="HIGHLANDS COFFEE">
+                            <div class="bg-store-item"><img src="/data/2019/09/17/17274498_LOGO-HIGHLANDS-500x500.jpg" alt="LOGO-HIGHLANDS-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/highlands-coffee/" title="HIGHLANDS COFFEE" alt="HIGHLANDS COFFEE"><span>HIGHLANDS COFFEE</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-22</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_l store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/levis/" title="LEVIS" alt="LEVIS">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/15084185_LOGO-LEVIS-500x500.jpg" alt="LOGO-LEVIS-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/levis/" title="LEVIS" alt="LEVIS"><span>LEVIS</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-25</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_n store_floor_10">
+                        <a href="/vn/the-thao/nike/" title="NIKE" alt="NIKE">
+                            <div class="bg-store-item"><img src="/data/2019/09/05/15023424_LOGO-NIKE-500x500.jpg" alt="LOGO-NIKE-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/the-thao/nike/" title="NIKE" alt="NIKE"><span>NIKE</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-14</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_p store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/parker/" title="PARKER" alt="PARKER">
+                            <div class="bg-store-item"><div style=""></div></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/parker/" title="PARKER" alt="PARKER"><span>PARKER</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-02</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_p store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/pnj-watch/" title="PNJ WATCH" alt="PNJ WATCH">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/16013338_LOGO-PNJ-WATCH-500x500.jpg" alt="LOGO-PNJ-WATCH-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/pnj-watch/" title="PNJ WATCH" alt="PNJ WATCH"><span>PNJ WATCH</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-29</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_p store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/precita/" title="PRECITA" alt="PRECITA">
+                            <div class="bg-store-item"><img src="/data/2019/05/06/17231608_logo-precita-500x500.jpg" alt="logo-precita-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/precita/" title="PRECITA" alt="PRECITA"><span>PRECITA</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-36</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_r store_floor_10">
+                        <a href="/vn/the-thao/reebok/" title="REEBOK" alt="REEBOK">
+                            <div class="bg-store-item"><img src="/data/2019/09/05/15055504_LOGO-REEBOK-500x500.jpg" alt="LOGO-REEBOK-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/the-thao/reebok/" title="REEBOK" alt="REEBOK"><span>REEBOK</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-27</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_s store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/samsonite/" title="SAMSONITE" alt="SAMSONITE">
+                            <div class="bg-store-item"><img src="/data/2019/05/06/17184650_logo-samsonite-500x500.jpg" alt="logo-samsonite-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/samsonite/" title="SAMSONITE" alt="SAMSONITE"><span>SAMSONITE</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-18</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_s store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/sjc/" title="SJC" alt="SJC">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/16113752_LOGO-SJC-500X500.jpg" alt="LOGO-SJC-500X500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/sjc/" title="SJC" alt="SJC"><span>SJC</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-37</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_s store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/sk-time/" title="SK TIME" alt="SK TIME">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/16131726_LOGO-SKTIME-500X500.jpg" alt="LOGO-SKTIME-500X500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/sk-time/" title="SK TIME" alt="SK TIME"><span>SK TIME</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-38</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_s store_floor_10">
+                        <a href="/vn/am-thuc/starbucks/" title="STARBUCKS" alt="STARBUCKS">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/14182535_LOGO-STARBUCKS-500x500.jpg" alt="LOGO-STARBUCKS-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/starbucks/" title="STARBUCKS" alt="STARBUCKS"><span>STARBUCKS</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-23</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_s store_floor_10">
+                        <a href="/vn/am-thuc/swensen39s/" title="SWENSEN'S" alt="SWENSEN'S">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/14390787_LOGO-SWENSENS-500x500.jpg" alt="LOGO-SWENSENS-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/swensen39s/" title="SWENSEN'S" alt="SWENSEN'S"><span>SWENSEN'S</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1_31</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_t store_floor_10">
+                        <a href="/vn/my-pham-nuoc-hoa/thefaceshop/" title="THEFACESHOP" alt="THEFACESHOP">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/16000916_logo-the-faceshop-500x500.jpg" alt="logo-the-faceshop-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/my-pham-nuoc-hoa/thefaceshop/" title="THEFACESHOP" alt="THEFACESHOP"><span>THEFACESHOP</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-26A</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_t store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/the-gioi-kim-cuong/" title="THẾ GIỚI KIM CƯƠNG" alt="THẾ GIỚI KIM CƯƠNG">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/16254028_LOGO-THE-GIOI-KIM-CUONG-500X500.jpg" alt="LOGO-THE-GIOI-KIM-CUONG-500X500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/the-gioi-kim-cuong/" title="THẾ GIỚI KIM CƯƠNG" alt="THẾ GIỚI KIM CƯƠNG"><span>THẾ GIỚI KIM CƯƠNG</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-34</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_t store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/tissot/" title="TISSOT" alt="TISSOT">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/16270352_LOGO-TISSOT-500X500.jpg" alt="LOGO-TISSOT-500X500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/tissot/" title="TISSOT" alt="TISSOT"><span>TISSOT</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-40</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_w store_floor_10">
+                        <a href="/vn/am-thuc/wayne39s-coffee/" title="WAYNE'S COFFEE" alt="WAYNE'S COFFEE">
+                            <div class="bg-store-item"><img src="/data/2019/05/08/09263828_logo-waynes-coffee-500x500.jpg" alt="logo-waynes-coffee-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/wayne39s-coffee/" title="WAYNE'S COFFEE" alt="WAYNE'S COFFEE"><span>WAYNE'S COFFEE</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-47</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_a store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/amprin/" title="AMPRIN" alt="AMPRIN">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/16113303_LOGO-AMPRIN-500x500.jpg" alt="LOGO-AMPRIN-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/amprin/" title="AMPRIN" alt="AMPRIN"><span>AMPRIN</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-17</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_b store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/bandicoot/" title="BANDICOOT" alt="BANDICOOT">
+                            <div class="bg-store-item"><img src="/data/2019/05/08/09031361_logo-bandicoot-500x500.jpg" alt="logo-bandicoot-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/bandicoot/" title="BANDICOOT" alt="BANDICOOT"><span>BANDICOOT</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-08-1</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_b store_floor_20">
+                        <a href="/vn/am-thuc/baskin-robbin/" title="BASKIN ROBBIN" alt="BASKIN ROBBIN">
+                            <div class="bg-store-item"><img src="/data/2019/09/17/15592412_LOGO-BASKINROBBIN-500x500.jpg" alt="LOGO-BASKINROBBIN-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/baskin-robbin/" title="BASKIN ROBBIN" alt="BASKIN ROBBIN"><span>BASKIN ROBBIN</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-19</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_b store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/belluni/" title="BELLUNI" alt="BELLUNI">
+                            <div class="bg-store-item"><img src="/data/2019/05/08/09012017_logo-belluni-500x500.jpg" alt="logo-belluni-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/belluni/" title="BELLUNI" alt="BELLUNI"><span>BELLUNI</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-09-19</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_b store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/blook/" title="BLOOK" alt="BLOOK">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/16280675_LOGO-BLOOK-500x500.png" alt="LOGO-BLOOK-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/blook/" title="BLOOK" alt="BLOOK"><span>BLOOK</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-03A</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_b store_floor_20">
+                        <a href="/vn/am-thuc/breadtalk/" title="BREADTALK" alt="BREADTALK">
+                            <div class="bg-store-item"><img src="/data/2019/09/17/16234355_LOGO-BREAKTALK-500X500.jpg" alt="LOGO-BREAKTALK-500X500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/breadtalk/" title="BREADTALK" alt="BREADTALK"><span>BREADTALK</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-02</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_c store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/couple-tx/" title="COUPLE TX" alt="COUPLE TX">
+                            <div class="bg-store-item"><img src="/data/2021/03/24/15013191_LOGO-COUPLE-TX-900X900.png" alt="LOGO-COUPLE-TX-900X900" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/couple-tx/" title="COUPLE TX" alt="COUPLE TX"><span>COUPLE TX</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-08-5</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_d store_floor_20">
+                        <a href="/vn/am-thuc/dairy-queen/" title="DAIRY QUEEN" alt="DAIRY QUEEN">
+                            <div class="bg-store-item"><img src="/data/2019/09/17/16341294_LOGO-DAIRY-QUEEN-500x500.jpg" alt="LOGO-DAIRY-QUEEN-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/dairy-queen/" title="DAIRY QUEEN" alt="DAIRY QUEEN"><span>DAIRY QUEEN</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-15</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_d store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/darlin/" title="DARLIN" alt="DARLIN">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/16324287_LOGO-DARLIN-500x500.jpg" alt="LOGO-DARLIN-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/darlin/" title="DARLIN" alt="DARLIN"><span>DARLIN</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-09-12</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_f store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/fadin/" title="FADIN" alt="FADIN">
+                            <div class="bg-store-item"><img src="/data/2019/05/07/17084342_logo-fadin-500x500.jpg" alt="logo-fadin-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/fadin/" title="FADIN" alt="FADIN"><span>FADIN</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-09-15</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_h store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/hnoss-fashion/" title="HNOSS FASHION" alt="HNOSS FASHION">
+                            <div class="bg-store-item"><img src="/data/2019/05/07/17070341_logo-hnoss-500x500.jpg" alt="logo-hnoss-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/hnoss-fashion/" title="HNOSS FASHION" alt="HNOSS FASHION"><span>HNOSS FASHION</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-09-4A</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_i store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/ibasic/" title="IBASIC" alt="IBASIC">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/16581554_logo-ibasic-500x500.jpg" alt="logo-ibasic-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/ibasic/" title="IBASIC" alt="IBASIC"><span>IBASIC</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-09-10</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_j store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/jossi/" title="JOSSI" alt="JOSSI">
+                            <div class="bg-store-item">
+                                <img src="/data/2019/05/07/17044577_logo-jossi-500x500.jpg" alt="logo-jossi-500x500" />
+                            </div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/jossi/" title="JOSSI" alt="JOSSI"><span>JOSSI</span></a>
+                            <div>
+                                <p class="floor-map-item">
+                                    <a href="/vn/so-do-tang/"># L2-09-13</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_d store_floor_10">
+                        <a href="/vn/am-thuc/dookki-vietnam/" title="DOOKKI Vietnam" alt="DOOKKI Vietnam">
+                            <div class="bg-store-item"><img src="/data/2020/02/04/13520928_LOGO.png" alt="LOGO" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/dookki-vietnam/" title="DOOKKI Vietnam" alt="DOOKKI Vietnam"><span>DOOKKI Vietnam</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-01A</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_j store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/juno/" title="JUNO" alt="JUNO">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/17074742_LOGO-JUNO-500x500.jpg" alt="LOGO-JUNO-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/juno/" title="JUNO" alt="JUNO"><span>JUNO</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-09-4</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_l store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/labella/" title="LABELLA" alt="LABELLA">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/15031388_LOGO-LABELLA-500x500.jpg" alt="LOGO-LABELLA-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/labella/" title="LABELLA" alt="LABELLA"><span>LABELLA</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-05</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_l store_floor_20">
+                        <a href="/vn/gia-dung/lock-lock/" title="LOCK &amp; LOCK" alt="LOCK &amp; LOCK">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/11221514_logo-locklock-500x500.jpg" alt="logo-locklock-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/gia-dung/lock-lock/" title="LOCK &amp; LOCK" alt="LOCK &amp; LOCK"><span>LOCK &amp; LOCK</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-06</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_m store_floor_9">
+                        <a href="/vn/cua-hang-tien-ich/minigood/" title="MINIGOOD" alt="MINIGOOD">
+                            <div class="bg-store-item"><img src="/data/2018/12/21/07363192_3330410117142320352811672512308606892769280n.jpg" alt="3330410117142320352811672512308606892769280n" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/cua-hang-tien-ich/minigood/" title="MINIGOOD" alt="MINIGOOD"><span>MINIGOOD</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># B1</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_b store_floor_8">
+                        <a href="/vn/thoi-trang-phu-kien/boo/" title="BOO" alt="BOO">
+                            <div class="bg-store-item"><img src="/data/2020/02/04/14141412_LOGO-BOO.png" alt="LOGO-BOO" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/boo/" title="BOO" alt="BOO"><span>BOO</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_m store_floor_20">
+                        <a href="/vn/cua-hang-tien-ich/miniso/" title="MINISO" alt="MINISO">
+                            <div class="bg-store-item">
+                                <img src="/data/2019/08/05/14201056_logo-miniso-500x500.jpg" alt="logo-miniso-500x500" />
+                            </div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/cua-hang-tien-ich/miniso/" title="MINISO" alt="MINISO"><span>MINISO</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-03</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_n store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/ninomaxx/" title="NINOMAXX" alt="NINOMAXX">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/15424685_LOGO-NINOMAXX_500x500.png" alt="LOGO-NINOMAXX_500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/ninomaxx/" title="NINOMAXX" alt="NINOMAXX"><span>NINOMAXX</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-09-5</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_p store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/papka/" title="PAPKA" alt="PAPKA">
+                            <div class="bg-store-item"><img src="/data/2021/03/26/15260193_LOGO-PAPKA-900X900.png" alt="LOGO-PAPKA-900X900" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/papka/" title="PAPKA" alt="PAPKA"><span>PAPKA</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-09-21</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_b store_floor_20">
+                        <a href="/vn/lam-dep-suc-khoe/boss/" title="BOSS" alt="BOSS">
+                            <div class="bg-store-item"><img src="/data/2021/03/26/15285409_LOGO-BOSS-900X900.jpg" alt="LOGO-BOSS-900X900" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/lam-dep-suc-khoe/boss/" title="BOSS" alt="BOSS"><span>BOSS</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-16</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_p store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/pop/" title="POP" alt="POP">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/16041078_LOGO-POP-500x500.jpg" alt="LOGO-POP-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/pop/" title="POP" alt="POP"><span>POP</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-09-8</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_r store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/rabity/" title="RABITY" alt="RABITY">
+                            <div class="bg-store-item"><img src="/data/2019/05/07/14473197_logo-rabity-500x500.jpg" alt="logo-rabity-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/rabity/" title="RABITY" alt="RABITY"><span>RABITY</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-18</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_s store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/sabina/" title="SABINA" alt="SABINA">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/16094386_LOGO-SABINA-V2-500x500.jpg" alt="LOGO-SABINA-V2-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/sabina/" title="SABINA" alt="SABINA"><span>SABINA</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-09-9</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_s store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/sline/" title="SLINE" alt="SLINE">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/16155721_LOGO-SLINE-500X500.jpg" alt="LOGO-SLINE-500X500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/sline/" title="SLINE" alt="SLINE"><span>SLINE</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-09-14</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_s store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/son-kim-mode/" title="SƠN KIM MODE" alt="SƠN KIM MODE">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/16162181_LOGO-SONKIM-MODE-500X500.jpg" alt="LOGO-SONKIM-MODE-500X500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/son-kim-mode/" title="SƠN KIM MODE" alt="SƠN KIM MODE"><span>SƠN KIM MODE</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-09-18</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_v store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/vincy/" title="VINCY" alt="VINCY">
+                            <div class="bg-store-item"><img src="/data/2019/05/07/14091602_vincy-logo-500x500.jpg" alt="vincy-logo-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/vincy/" title="VINCY" alt="VINCY"><span>VINCY</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-05A</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_v store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/vitimex/" title="VITIMEX" alt="VITIMEX">
+                            <div class="bg-store-item"><img src="/data/2019/05/07/14043981_vitimex-logo-500x500.jpg" alt="vitimex-logo-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/vitimex/" title="VITIMEX" alt="VITIMEX"><span>VITIMEX</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2-09-25</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_a store_floor_30">
+                        <a href="/vn/am-thuc/aka-house/" title="AKA HOUSE" alt="AKA HOUSE">
+                            <div class="bg-store-item"><img src="/data/2019/09/17/15485781_LOGO-AKA-HOUSE-500x500.jpg" alt="LOGO-AKA-HOUSE-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/aka-house/" title="AKA HOUSE" alt="AKA HOUSE"><span>AKA HOUSE</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L3-03A</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_a store_floor_30">
+                        <a href="/vn/am-thuc/asiana-food-town/" title="ASIANA FOOD TOWN" alt="ASIANA FOOD TOWN">
+                            <div class="bg-store-item"><img src="/data/2019/09/17/16555442_AFT_logo-500x500.jpg" alt="AFT_logo-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/asiana-food-town/" title="ASIANA FOOD TOWN" alt="ASIANA FOOD TOWN"><span>ASIANA FOOD TOWN</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L3-06</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_d store_floor_30">
+                        <a href="/vn/giai-tri/dream-kids/" title="DREAM KIDS" alt="DREAM KIDS">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/15295560_logo-dream-kids-500x500.jpg" alt="logo-dream-kids-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/giai-tri/dream-kids/" title="DREAM KIDS" alt="DREAM KIDS"><span>DREAM KIDS</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L3-04</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_f store_floor_30">
+                        <a href="/vn/giao-duc/fahasa/" title="FAHASA" alt="FAHASA">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/14393176_logo-fahasa-500x500.jpg" alt="logo-fahasa-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/giao-duc/fahasa/" title="FAHASA" alt="FAHASA"><span>FAHASA</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L3-05</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_f store_floor_30">
+                        <a href="/vn/gia-dung/frico/" title="FRICO" alt="FRICO">
+                            <div class="bg-store-item"><img src="/data/2019/05/06/09083159_logo-frico-500x500.jpg" alt="logo-frico-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/gia-dung/frico/" title="FRICO" alt="FRICO"><span>FRICO</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L3-08</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_l store_floor_30">
+                        <a href="/vn/am-thuc/lau-bo-sai-gon/" title="LẨU BÒ SÀI GÒN" alt="LẨU BÒ SÀI GÒN">
+                            <div class="bg-store-item">
+                                <img src="/data/2019/09/20/10500122_LOGO-LAU-BO-SAI-GON-500x500.jpg" alt="LOGO-LAU-BO-SAI-GON-500x500" />
+                            </div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/lau-bo-sai-gon/" title="LẨU BÒ SÀI GÒN" alt="LẨU BÒ SÀI GÒN"><span>LẨU BÒ SÀI GÒN</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L3-02</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_t store_floor_30">
+                        <a href="/vn/am-thuc/the-pizza-company/" title="THE PIZZA COMPANY" alt="THE PIZZA COMPANY">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/14514819_LOGO-THE-PIZZA-COMPANY-500x500.jpg" alt="LOGO-THE-PIZZA-COMPANY-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/the-pizza-company/" title="THE PIZZA COMPANY" alt="THE PIZZA COMPANY"><span>THE PIZZA COMPANY</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L3-03</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_g store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/g2000/" title="G2000" alt="G2000">
+                            <div class="bg-store-item"><img src="/data/2019/09/20/16462969_LOGO-G2000-500x500.jpg" alt="LOGO-G2000-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/g2000/" title="G2000" alt="G2000"><span>G2000</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-10</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_s store_floor_10">
+                        <a href="/vn/thoi-trang-phu-kien/skechers/" title="SKECHERS" alt="SKECHERS">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/16411008_LOGO-SKECHERS.png" alt="LOGO-SKECHERS" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/skechers/" title="SKECHERS" alt="SKECHERS"><span>SKECHERS</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1-17B</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_n store_floor_20">
+                        <a href="/vn/thoi-trang-phu-kien/native-shoes/" title="NATIVE SHOES" alt="NATIVE SHOES">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/16374345_native_logo.jpg" alt="native_logo" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/native-shoes/" title="NATIVE SHOES" alt="NATIVE SHOES"><span>NATIVE SHOES</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2_10</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_t store_floor_10">
+                        <a href="/vn/lam-dep-suc-khoe/the-body-shop/" title="THE BODY SHOP" alt="THE BODY SHOP">
+                            <div class="bg-store-item"><img src="/data/2020/11/18/10305074_116788334_3326757604041262_2960802043271669131_n.jpg" alt="116788334_3326757604041262_2960802043271669131_n" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/lam-dep-suc-khoe/the-body-shop/" title="THE BODY SHOP" alt="THE BODY SHOP"><span>THE BODY SHOP</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L1</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_e store_floor_40">
+                        <a href="/vn/lam-dep-suc-khoe/eri-international-clinic/" title="ERI INTERNATIONAL CLINIC" alt="ERI INTERNATIONAL CLINIC">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/14513409_logo-erri-500x500.jpg" alt="logo-erri-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/lam-dep-suc-khoe/eri-international-clinic/" title="ERI INTERNATIONAL CLINIC" alt="ERI INTERNATIONAL CLINIC"><span>ERI INTERNATIONAL CLINIC</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-01</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_i store_floor_40">
+                        <a href="/vn/khac/isala/" title="ISALA" alt="ISALA">
+                            <div class="bg-store-item"><img src="/data/2019/06/06/14264362_logo-1x1.png" alt="logo-1x1" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/khac/isala/" title="ISALA" alt="ISALA"><span>ISALA</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-06B</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_m store_floor_40">
+                        <a href="/vn/chan-goi-nem-noi-that/my-home/" title="MY HOME" alt="MY HOME">
+                            <div class="bg-store-item"><img src="/data/2019/05/04/10254976_logo-myhome-500x500.jpg" alt="logo-myhome-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/chan-goi-nem-noi-that/my-home/" title="MY HOME" alt="MY HOME"><span>MY HOME</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-05B</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_t store_floor_40">
+                        <a href="/vn/gia-dung/tupperware/" title="TUPPERWARE" alt="TUPPERWARE">
+                            <div class="bg-store-item"><img src="/data/2019/05/04/10174889_logo-tupperware-500x500.jpg" alt="logo-tupperware-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/gia-dung/tupperware/" title="TUPPERWARE" alt="TUPPERWARE"><span>TUPPERWARE</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-14A</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_c store_floor_30">
+                        <a href="/vn/gia-dung/chilai/" title="CHILAI" alt="CHILAI">
+                            <div class="bg-store-item">
+                                <img src="/data/2019/09/05/17282523_LOGO-CHILAI.jpg" alt="LOGO-CHILAI" />
+                            </div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/gia-dung/chilai/" title="CHILAI" alt="CHILAI"><span>CHILAI</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L3-11</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_a store_floor_70">
+                        <a href="/vn/giao-duc/apax-leaders/" title="Apax Leaders" alt="Apax Leaders">
+                            <div class="bg-store-item"><img src="/data/2019/07/30/10003522_apax-leaders-logo-1000x1000.jpg" alt="apax-leaders-logo-1000x1000" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/giao-duc/apax-leaders/" title="Apax Leaders" alt="Apax Leaders"><span>Apax Leaders</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L7-04A</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_g store_floor_20">
+                        <a href="/vn/sieu-thi/grove-fresh/" title="GROVE FRESH" alt="GROVE FRESH">
+                            <div class="bg-store-item"><img src="/data/2021/01/08/11450732_LOGO-GROVE-FRESH-900X900.jpg" alt="LOGO-GROVE-FRESH-900X900" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/sieu-thi/grove-fresh/" title="GROVE FRESH" alt="GROVE FRESH"><span>GROVE FRESH</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L2</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_d store_floor_50">
+                        <a href="/vn/giai-tri/dome-theater/" title="DOME THEATER" alt="DOME THEATER">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/15500814_logo-dome-theater.jpg" alt="logo-dome-theater" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/giai-tri/dome-theater/" title="DOME THEATER" alt="DOME THEATER"><span>DOME THEATER</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L5-28</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_h store_floor_40">
+                        <a href="/vn/lam-dep-suc-khoe/himalaya/" title="HIMALAYA" alt="HIMALAYA">
+                            <div class="bg-store-item"><img src="/data/2021/03/19/14412106_logo-himalaya-900x900.png" alt="logo-himalaya-900x900" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/lam-dep-suc-khoe/himalaya/" title="HIMALAYA" alt="HIMALAYA"><span>HIMALAYA</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-23</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_j store_floor_0">
+                        <a href="/vn/giai-tri/jump-arena/" title="JUMP ARENA" alt="JUMP ARENA">
+                            <div class="bg-store-item"><img src="/data/2019/08/05/15553705_logo-jump-arena-500x500.jpg" alt="logo-jump-arena-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/giai-tri/jump-arena/" title="JUMP ARENA" alt="JUMP ARENA"><span>JUMP ARENA</span></a>
+                            <div><p class="floor-map-item"></p></div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_g store_floor_40">
+                        <a href="/vn/thoi-trang-phu-kien/gabby/" title="GABBY" alt="GABBY">
+                            <div class="bg-store-item"><img src="/data/2021/03/19/14154585_LOGO-GABBY-900X900.png" alt="LOGO-GABBY-900X900" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/thoi-trang-phu-kien/gabby/" title="GABBY" alt="GABBY"><span>GABBY</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L4-1B</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_s store_floor_50">
+                        <a href="/vn/am-thuc/spicy-box/" title="SPICY BOX" alt="SPICY BOX">
+                            <div class="bg-store-item"><img src="/data/2019/11/26/14543217_LOGO-SPICY-BOX-500x500.jpg" alt="LOGO-SPICY-BOX-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/spicy-box/" title="SPICY BOX" alt="SPICY BOX"><span>SPICY BOX</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># L5-22-23</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-store-item store_alpha_h store_floor_9">
+                        <a href="/vn/am-thuc/hotcold/" title="Hot&amp;Cold" alt="Hot&amp;Cold">
+                            <div class="bg-store-item"><img src="/data/2019/09/17/17485311_LOGO-HOTCOLD-500x500.jpg" alt="LOGO-HOTCOLD-500x500" /></div>
+                        </a>
+                        <div class="info-store-item">
+                            <a href="/vn/am-thuc/hotcold/" title="Hot&amp;Cold" alt="Hot&amp;Cold"><span>Hot&amp;Cold</span></a>
+                            <div>
+                                <p class="floor-map-item"><a href="/vn/so-do-tang/"># B1_03</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-list-foormap">
+                    <ul class="">
+                        <li class="cat-item" id="floor_8"><a href="javascript:void(0)" onclick="listfloormap('8');" title="" class="category-label">B2</a></li>
+                        <li class="cat-item" id="floor_9"><a href="javascript:void(0)" onclick="listfloormap('9');" title="" class="category-label">B1</a></li>
+                        <li class="cat-item" id="floor_10"><a href="javascript:void(0)" onclick="listfloormap('10');" title="" class="category-label">L1</a></li>
+                        <li class="cat-item" id="floor_20"><a href="javascript:void(0)" onclick="listfloormap('20');" title="" class="category-label">L2</a></li>
+                        <li class="cat-item" id="floor_30"><a href="javascript:void(0)" onclick="listfloormap('30');" title="" class="category-label">L3</a></li>
+                        <li class="cat-item" id="floor_40"><a href="javascript:void(0)" onclick="listfloormap('40');" title="" class="category-label">L4</a></li>
+                        <li class="cat-item" id="floor_50"><a href="javascript:void(0)" onclick="listfloormap('50');" title="" class="category-label">L5</a></li>
+                        <li class="cat-item" id="floor_60"><a href="javascript:void(0)" onclick="listfloormap('60');" title="" class="category-label">L6</a></li>
+                        <li class="cat-item" id="floor_70"><a href="javascript:void(0)" onclick="listfloormap('70');" title="" class="category-label">L7</a></li>
+                        <li class="cat-item" id="floor_80"><a href="javascript:void(0)" onclick="listfloormap('80');" title="" class="category-label">L8</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

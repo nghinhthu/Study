@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewData["Title"] = "Member";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="content-page">
+    <div class="container">
+        <div class="row">
+            <div class="info-group">
+                <h1 class="title-group-home">
+                    <a href="/vn/thanh-vien/" alt="Thành viên">Thành viên</a>
+                </h1>
+                <div class="list-group">
+                    <a class="active" href="/vn/thanh-vien/the-thanh-vien/">Thẻ thành viên</a>
+                    <a href="/vn/thanh-vien/chuong-trinh-dac-quyen/">Chương trình đặc quyền</a>
+                </div>
+            </div>
+            <div class="col-md-6 member-right">
+                <script language="Javascript">
+                    function validatelogin() {
+                        if (document.fmlogin.account.value == '') {
+                            alert('Thông tin đăng nhập không được để trống');
+                            document.fmlogin.account.focus();
+                            return false;
+                        }
+                        if (document.fmlogin.pword.value == '') {
+                            alert('Vui lòng nhập mật khẩu!');
+                            document.fmlogin.pword.focus();
+                            return false;
+                        }
+                        document.fmlogin.submit();
+                    }
+                </script>
+                <form id="fmlogin" name="fmlogin" action="/vn/thanh-vien/the-thanh-vien/" method="post">
+                    <div class="fmcontact-form contact">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" id="account" name="account" value="" placeholder="Email hoặc số điện thoại">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="password" id="pword" name="pword" value="" placeholder="Mật khẩu">
+                            </div>
+                        </div>
+                        <div class="login_button_list">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a href="javascript:void(0)" onclick="validatelogin();" class="button_login">Đăng nhập</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="row">
+                    <div id="view_content">
+                        <h2>
+                            <span>Ứng dụng GIGAMALL</span>
+                        </h2>
+                    </div>
+                    <div class="app">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="/images/app/IOS-QRC.png" alt="GIGAMALL">
+                                <a href="https://itunes.apple.com/us/app/gigamall-vietnam/id1448013961?ls=1&amp;mt=8" target="_blank">
+                                    <img src="/images/app/app-store.png" alt="GIGAMALL">
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="/images/app/Android.png" alt="GIGAMALL">
+                                <a href="https://play.google.com/store/apps/details?id=com.ms_apptech.gigamall" target="_blank">
+                                    <img src="/images/app/google-play.png" alt="GIGAMALL">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

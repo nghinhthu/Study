@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveSport", "LiveSport\Live
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gigamall", "Gigamall\Gigamall.csproj", "{52AFCFCD-A88E-4313-8205-80CC0BAAA73D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSA", "MSA\MSA.csproj", "{98027D79-8B9D-4B4C-A822-790DE54DA0F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSA", "MSA\MSA.csproj", "{98027D79-8B9D-4B4C-A822-790DE54DA0F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

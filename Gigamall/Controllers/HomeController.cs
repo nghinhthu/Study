@@ -1,11 +1,7 @@
 ﻿using Gigamall.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Gigamall.Controllers
 {
@@ -32,6 +28,32 @@ namespace Gigamall.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult Introduction()
+        {
+            return View();
+        }
+
+        public IActionResult Promotion()
+        {
+            return View();
+        }
+        public IActionResult Event()
+        {
+            return View();
+        }
+        public IActionResult Brand()
+        {
+            return View();
+        }
+        public IActionResult Member()
+        {
+            return View();
+        }
+        public IActionResult Utilities()
+        {
+            return View();
         }
     }
 }
