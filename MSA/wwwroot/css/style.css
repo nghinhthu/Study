@@ -1306,7 +1306,7 @@ header {
         .article-item-utilities .bg-article-item-utilities > div {
             background-position: center;
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: contain;
             padding-top: 50%;
         }
 
