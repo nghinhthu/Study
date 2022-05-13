@@ -55,5 +55,15 @@ namespace Gigamall.Controllers
         {
             return View();
         }
+
+        public IActionResult LoginWifi()
+        {
+            return View();
+        }
+
+        public IActionResult DetailLoginWifi()
+        {
+            return View();
+        }
     }
 }
