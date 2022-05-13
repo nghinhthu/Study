@@ -11,7 +11,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="ID" class="control-label"></label>
@@ -23,17 +23,35 @@
                 <input asp-for="ClassName" class="form-control" />
                 <span asp-validation-for="ClassName" class="text-danger"></span>
             </div>
-            @foreach (var item in Model.Students)
-            {
-                <div class="form-group">
-                    <label asp-for="@item" class="control-label"></label>
-                    <input asp-for="@item" class="form-control" />
-                    <span asp-validation-for="@item" class="text-danger"></span>
-                </div>
+            @*@foreach (var item in Model.Students)
+                {
+                    <div class="form-group">
+                        <label asp-for="@item" class="control-label"></label>
+                        <input asp-for="@item" class="form-control" />
+                        <span asp-validation-for="@item" class="text-danger"></span>
+                    </div>
+                }*@
+
+            @{
+                this.ViewContext.HttpContext.Items["Stuff"] = "some-data";
             }
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+
+            @{
+                //var result = Html.Partial("_CreateStudent", Model.Students);
+            }
+
+
+            @{ var results = Html.Partial("_CreateStudent", Model.Students); }
+
+            <div id="@this.ViewContext.HttpContext.Items["Stuff"]">
+                @results ahihis
+                <div>
+
+
+
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
         </form>
     </div>
 </div>
@@ -41,4 +59,5 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
 

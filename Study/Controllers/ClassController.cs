@@ -9,36 +9,31 @@ namespace Study.Controllers
 {
     public class ClassController : Controller
     {
+        List<ClassModel> classList;
 
+        public ClassController()
+        {
+            classList = new List<ClassModel>()
+            {
+                new ClassModel(){ ID = 1, ClassName = "Anh Van", Students = new List<StudentModel>()
+                {
+                    new StudentModel(){ID = 1, Name = "Bak Bak", Address = "Binh Tan", City = "Ho Chi Minh" },
+                    new StudentModel(){ID = 2, Name = "Meo Meo", Address = "Binh Tan", City = "Ho Chi Minh" },
+
+                }
+                },
+                new ClassModel(){ ID = 2, ClassName = "Tin Hoc", Students = new List<StudentModel>()
+                {
+                    new StudentModel(){ID = 1, Name = "Bak Bak", Address = "Binh Tan", City = "Ho Chi Minh" },
+                    new StudentModel(){ID = 2, Name = "Meo Meo", Address = "Binh Tan", City = "Ho Chi Minh" },
+
+                }
+                },
+            };
+        }
         public IActionResult Index()
         {
-            List<ClassModel> classModels = new List<ClassModel>(); ;
-
-            classModels.Add(new ClassModel
-            {
-                ID = 1,
-                ClassName = "Anh Van",
-            });
-
-            classModels.Add(new ClassModel
-            {
-                ID = 2,
-                ClassName = "Tin Hoc",
-                Students = new List<StudentModel>()
-                {
-                    new StudentModel()
-                    {
-                        ID = 1,
-                        Name = "Nghinh Thu",
-                        Address = "BT",
-                        City = "Ho Chi Minh"
-                    }
-                }
-
-            });
-
-
-            return View(classModels);
+            return View(classList);
         }
         public ActionResult Details()
         {
@@ -64,7 +59,15 @@ namespace Study.Controllers
             return View(model);
         }
 
-        public IActionResult Edit(int ID)
+        public IActionResult Edit(int id)
+        {
+            ClassModel model = new ClassModel();
+            model.ID = 1;
+            model.ClassName = "Anh Van";
+            return View(model);
+        }
+
+        public IActionResult Delete(int id)
         {
             ClassModel model = new ClassModel();
             model.ID = 1;
@@ -84,7 +87,8 @@ namespace Study.Controllers
             ClassModel model = new ClassModel();
             model.ID = classModel.ID;
             model.ClassName = classModel.ClassName;
-            return View("Index");
+            model.Students = classModel.Students;
+            return RedirectToAction("Index");
         }
     }
 }

@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MSA.FW.Application">
+      <HintPath>..\..\..\..\Source\MSAM_MES_DAL\MSA Lib\MSA.FW.Application.dll</HintPath>
+    </Reference>
+    <Reference Include="MSA.FW.BaseApp">
+      <HintPath>..\..\..\..\Source\MSAM_MES_DAL\MSA Lib\MSA.FW.BaseApp.dll</HintPath>
+    </Reference>
+    <Reference Include="MSA.FW.BO">
+      <HintPath>..\..\..\..\Source\MSAM_MES_DAL\MSA Lib\MSA.FW.BO.dll</HintPath>
+    </Reference>
+    <Reference Include="MSA.Util.DALDapperHelper">
+      <HintPath>..\..\..\..\Source\MSAM_MES_DAL\MSA_MES_DAL\MSA.Util.DALDapperHelper\bin\Release\netstandard2.1\MSA.Util.DALDapperHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="MSA.Util.DapperHelper">
+      <HintPath>..\..\..\..\Source\MSAM_MES_DAL\MSA Lib\MSA.Util.DapperHelper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

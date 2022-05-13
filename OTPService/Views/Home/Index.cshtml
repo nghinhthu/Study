@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome @ViewBag.AppConfig</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<form method="post">
+    <button asp-action="RequestOTP" asp-controller="Home" class="btn btn-primary">Generate OTP</button>
+    <a asp-action="RequestOTP">Hihi</a>
+</form>
