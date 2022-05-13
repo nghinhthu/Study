@@ -1,0 +1,97 @@
+﻿<header>
+    <div class="container">
+        <div class="header-top">
+            <div class="logo">
+                <a asp-controller="Home" asp-action="Index">
+                    <img src="/images/logo.png" alt="GIGAMALL">
+                </a>
+            </div>
+            <div class="header-right">
+                <div class="info-gigamall-header">
+                    <h2>TRUNG TÂM THƯƠNG MẠI GIGAMALL</h2>
+                    <p>240 - 242 Phạm Văn Đồng,<br>P. Hiệp Bình Chánh,&nbsp;Q. Thủ Đức, TP.HCM</p>
+                    <p>Hotline: 028 666 00222 - Email: info@gigamall.com.vn</p>
+                </div>
+                <div class="menu">
+
+                    <div id="cssmenu">
+                        <ul>
+                            <li class="active">
+                                <a href="javascript:void(0)">Trang chủ</a>
+                            </li>
+                            <li class="has-sub">
+                                <span class="submenu-button"></span>
+                                <a asp-action="Introduction" asp-controller="Home" alt="Giới thiệu">Giới thiệu</a>
+                                <ul>
+                                    <li><a style="" href="javascript:void(0)" alt="Về GIGAMALL">Về GIGAMALL</a></li>
+                                    <li><a style="" href="javascript:void(0)" alt="Tuyển dụng">Tuyển dụng</a></li>
+                                </ul>
+                            </li>
+                            <li><a asp-action="Promotion" asp-controller="Home" alt="Khuyến mãi">Khuyến mãi</a></li>
+                            <li class="has-sub">
+                                <span class="submenu-button"></span>
+                                <a asp-action="Event" asp-controller="Home" alt="Tin tức &amp; Sự kiện">Tin tức &amp; Sự kiện</a>
+                                <ul>
+                                    <li><a style="" href="javascript:void(0)" alt="Sự kiện">Sự kiện</a></li>
+                                    <li><a style="" href="javascript:void(0)" alt="Clip trải nghiệm">Clip trải nghiệm</a></li>
+                                    <li><a style="" href="javascript:void(0)" alt="Bài viết">Bài viết</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <span class="submenu-button"></span>
+                                <a asp-action="Brand" asp-controller="Home" alt="Thương hiệu">Thương hiệu</a><ul>
+                                    <li><a style="" href="javascript:void(0)" alt="Ẩm thực">Ẩm thực</a></li>
+                                    <li><a style="" href="javascript:void(0)" alt="Cửa hàng tiện ích">Cửa hàng tiện ích</a></li>
+                                    <li><a style="" href="javascript:void(0)" alt="Điện máy">Điện máy</a></li>
+                                    <li><a style="" href="javascript:void(0)" alt="Gia dụng">Gia dụng</a></li>
+                                    <li><a style="" href="javascript:void(0)" alt="Chăn gối nệm &amp; Nội thất">Chăn gối nệm &amp; Nội thất</a></li>
+                                    <li><a style="" href="javascript:void(0)" alt="Giải trí">Giải trí</a></li>
+                                    <li><a style="" href="javascript:void(0)" alt="Giáo dục">Giáo dục</a></li>
+                                    <li><a style="" href="javascript:void(0)" alt="Làm đẹp &amp; sức khỏe">Làm đẹp &amp; sức khỏe</a></li>
+                                    <li><a style="" href="javascript:void(0)" alt="Mỹ phẩm &amp; Nước hoa">Mỹ phẩm &amp; Nước hoa</a></li>
+                                    <li><a style="" href="javascript:void(0)" alt="Siêu thị">Siêu thị</a></li>
+                                    <li><a style="" href="javascript:void(0)" alt="Thời trang &amp; Phụ kiện">Thời trang &amp; Phụ kiện</a></li>
+                                    <li><a style="" href="javascript:void(0)" alt="Thể thao">Thể thao</a></li>
+                                    <li><a style="" href="javascript:void(0)" alt="Khác">Khác</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="javascript:void(0)" alt="Sơ đồ tầng">Sơ đồ tầng</a></li>
+                            <li class="has-sub">
+                                <span class="submenu-button"></span>
+                                <a asp-action="Member" asp-controller="Home" alt="Thành viên">Thành viên</a>
+                                <ul>
+                                    <li><a style="" href="javascript:void(0)" alt="Thẻ thành viên">Thẻ thành viên</a></li>
+                                    <li><a style="" href="javascript:void(0)" alt="Chương trình đặc quyền">Chương trình đặc quyền</a></li>
+                                </ul>
+                            </li>
+                            <li><a asp-action="Utilities" asp-controller="Home" alt="Tiện ích">Tiện ích</a></li>
+                            <li><a href="javascript:void(0)" alt="Liên hệ">Liên hệ</a></li>
+                            <li id="search_form" class="search_form">
+                                <form id="fsm" name="fsm" action="/xmlhttp.aspx?FID=6&amp;search=1" method="post">
+                                    <input type="text" id="searchid" name="searchid" onfocusout="hidden_search_form()" placeholder="Nhập từ khoá" onkeypress="return keyEnter(event,'Search')" class="" onclick="this.value=''">
+                                    <div class="search-btn">
+                                        <a class="search-icon" href="javascript:search('Search')">
+                                            <img src="/images/search-store-icon.png">
+                                        </a>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu-right">
+                        <div class="search-form-button" id="search_form_button">
+                            <a href="javascript:void(0)" onclick="show_search_form()">
+                                <img src="/images/search-icon.png" alt="GIGAMALL">
+                            </a>
+                        </div>
+                        <div class="language">
+                            <a class="en" href="javascript:void(0)">
+                                <img src="/images/en.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

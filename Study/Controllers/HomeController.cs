@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Study.Models;
@@ -13,10 +14,13 @@ namespace Study.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IMapper mapper;
 
-        public HomeController(ILogger<HomeController> logger)
+
+        public HomeController(ILogger<HomeController> logger, IMapper mapper)
         {
             _logger = logger;
+            this.mapper = mapper;
         }
 
         public IActionResult Index()
@@ -89,5 +93,18 @@ namespace Study.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        public IActionResult Register
+        (UserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                AppUser user = mapper.Map<AppUser>(model);
+                //db.Users.Add(user);
+                //db.SaveChanges();
+            }
+            return View();
+        }
+
     }
 }

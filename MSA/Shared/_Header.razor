@@ -1,0 +1,57 @@
+﻿<header>
+    <div class="container">
+        <div class="header-top">
+            <div class="logo">
+                <a asp-controller="Home" asp-action="Index">
+                    @*<img src="/images/logo.png" alt="GIGAMALL">*@
+                    <img src="/images/msa-logo.png" />
+                </a>
+            </div>
+            <div class="header-right">
+                <div class="info-gigamall-header">
+                    <h2>CÔNG TY TIN HỌC ỨNG DỤNG SAO MAI</h2>
+                    <p>Email: info@ms-apptech.com</p>
+                    <p>Website: www.ms-apptech.com</p>
+                    <p>Điện thoại: (028) 22156380 - (028) 22156382</p>
+                    @*<p>240 - 242 Phạm Văn Đồng,<br>P. Hiệp Bình Chánh,&nbsp;Q. Thủ Đức, TP.HCM</p>
+                        <p>Hotline: 028 666 00222 - Email: info@gigamall.com.vn</p>*@
+                </div>
+                <div class="menu">
+
+                    <div id="cssmenu">
+                        <ul>
+                            <li class="active">
+                                <a href="javascript:void(0)">Trang chủ</a>
+                            </li>
+                            <li>
+                                <a asp-action="Promotion" asp-controller="Home" alt="Giới thiệu">Giới thiệu</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" alt="Lĩnh vực hoạt động">Lĩnh vực hoạt động</a>
+                            </li>
+
+                            <li>
+                                <a asp-action="Utilities" asp-controller="Home" alt="Tiện ích">Sơ đồ tổ chức</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" alt="Khách hàng">Khách hàng</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+@code {
+
+}
+<style>
+    .header-right {
+        width: 85%;
+    }
+
+    .menu {
+        width: 100%;
+    }
+</style>
