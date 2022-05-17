@@ -3,27 +3,45 @@
     ViewData["Title"] = "DetailLoginWifi";
     Layout = "~/Views/Shared/_LayoutWifi.cshtml";
 }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
 
+        $(".yes-button").click(function () {
+            $("#hide").hide();
+            $(".show-content").show();
+            //return false;
+
+        });
+    });
+</script>
+<style>
+    .show-content {
+        display: none;
+    }
+</style>
 <div class="container">
     <div class="card center">
         <div class="card-body">
             <div class="card-logo">
                 <img src="~/images/THACO/GoldLogoCut.png" />
             </div>
-            <div class="card-title">Đăng ký nhận voucher tại THISO Mall</div>
-            <div class="container">
+            <div class="card-title">Hãy trở thành thành viên tại THISO Mall để nhận voucher</div>
+            <div class="d-flex justify-content-center pb-4" id="hide">
+                <button type="button" class="btn btn-warning yes-button hide-content" style="margin-right: 20px">Yes</button>
+                <button type="button" class="btn btn-secondary" onclick="location.href='@Url.Action("Index", "Home" )'">No</button>
+            </div>
+
+            <div class="container show-content">
                 <div class="input-group flex-nowrap">
                     <input type="text" class="form-control w-75" placeholder="Họ và tên">
                 </div>
                 <div class="input-group flex-nowrap">
-                    <input type="tel" class="form-control w-75" placeholder="Số điện thoại">
-                </div>
-                <div class="input-group flex-nowrap">
                     <input type="email" class="form-control w-75" placeholder="Email">
                 </div>
-                <div class="input-group flex-nowrap">
-                    <input type="date" class="form-control w-75" placeholder="Ngày sinh">
-                </div>
+                @*<div class="input-group flex-nowrap">
+                        <input type="date" class="form-control w-75" placeholder="Ngày sinh">
+                    </div>*@
                 <div class="d-grid gap-2 promotion">
                     <button class="btn main-button" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Nhận voucher</button>
                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
