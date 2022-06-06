@@ -2758,7 +2758,7 @@ footer {
 }
 
     footer::before {
-        background-image: linear-gradient(to right, #932b86, #c22578, #e3356d, #f49d18, #f9cf0f);
+        background-image: linear-gradient(to right, #36AE7C, #4E944F, #83BD75, #B4E197, #E9EFC0);
         content: '';
         position: absolute;
         top: 0;
