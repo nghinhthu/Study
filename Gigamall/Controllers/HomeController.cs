@@ -65,5 +65,10 @@ namespace Gigamall.Controllers
         {
             return View();
         }
+
+        public IActionResult LostAndFound()
+        {
+            return View();
+        }
     }
 }
