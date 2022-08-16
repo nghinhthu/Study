@@ -1,25 +1,10 @@
 ﻿@inherits LayoutComponentBase
 <_Header></_Header>
-@Body
-<_AboutUS></_AboutUS>
-<_Project></_Project>
-<_Customer></_Customer>
+<div style="min-height: 100vh">
+    @Body
+</div>
+
 <_Footer></_Footer>
-@*<div class="page">
-        <div class="sidebar">
-            <NavMenu></NavMenu>
-        </div>
-
-        <div class="main">
-            <div class="top-row px-4">
-                <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
-            </div>
-
-            <div class="content px-4">
-                @Body
-            </div>
-        </div>
-    </div>*@
 <style>
     html {
         scroll-behavior: smooth;
