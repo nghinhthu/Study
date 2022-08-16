@@ -1,3 +1,4 @@
 ﻿:root {
-    --main-color: #b0297e;
+    --main-color: /*#b0297e*/ #53565b;
+    /*thiso: #daa563*/
 }

@@ -38,13 +38,28 @@ namespace CSharpBasic
             //sungLuc.TanCong();
             //sungTruong.TanCong();
 
-            Product product1 = new Product();
-            Product product2 = new Product("Dien thoai", 1000);
-            Product product3 = new Product("May tinh", 5000);
+            //Product product1 = new Product();
+            //Product product2 = new Product("Dien thoai", 1000);
+            //Product product3 = new Product("May tinh", 5000);
 
-            Console.WriteLine($"Product 1: {product1.Name} - {product1.Price}");
-            Console.WriteLine($"Product 2: {product2.Name} - {product2.Price}");
-            Console.WriteLine($"Product 3: {product3.Name} - {product3.Price}");
+            //Console.WriteLine($"Product 1: {product1.Name} - {product1.Price}");
+            //Console.WriteLine($"Product 2: {product2.Name} - {product2.Price}");
+            //Console.WriteLine($"Product 3: {product3.Name} - {product3.Price}");
+
+            var key = "b14ca5898a4e4133bbce2ea2315a1916";
+
+            //Console.WriteLine("Please enter a secret key for the symmetric algorithm.");  
+            //var key = Console.ReadLine();  
+
+            Console.WriteLine("Please enter a string for encryption");
+            var str = Console.ReadLine();
+            var encryptedString = AesOperation.EncryptString(key, str);
+            Console.WriteLine($"encrypted string = {encryptedString}");
+
+            var decryptedString = AesOperation.DecryptString(key, encryptedString);
+            Console.WriteLine($"decrypted string = {decryptedString}");
+
+            Console.ReadKey();
         }
     }
 }

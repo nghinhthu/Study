@@ -3,14 +3,16 @@
         <div class="header-top">
             <div class="logo">
                 <a asp-controller="Home" asp-action="Index">
-                    <img src="/images/logo.png" alt="GIGAMALL">
+                    @*<img src="/images/logo.png" alt="GIGAMALL">*@
+                    <img src="~/images/THACO/GoldLogoCut.png" />
+
                 </a>
             </div>
             <div class="header-right">
                 <div class="info-gigamall-header">
-                    <h2>TRUNG TÂM THƯƠNG MẠI GIGAMALL</h2>
-                    <p>240 - 242 Phạm Văn Đồng,<br>P. Hiệp Bình Chánh,&nbsp;Q. Thủ Đức, TP.HCM</p>
-                    <p>Hotline: 028 666 00222 - Email: info@gigamall.com.vn</p>
+                    <h2>TRUNG TÂM THƯƠNG MẠI THISO MALL</h2>
+                    <p>SOFIC TOWER - 10 Mai Chi Tho,<br>Thu Duc City,&nbsp;Ho Chi Minh City</p>
+                    <p>Hotline: (028) 37425566 - Email: info@thisomall.com.vn</p>
                 </div>
                 <div class="menu">
 
@@ -23,7 +25,7 @@
                                 <span class="submenu-button"></span>
                                 <a asp-action="Introduction" asp-controller="Home" alt="Giới thiệu">Giới thiệu</a>
                                 <ul>
-                                    <li><a style="" href="javascript:void(0)" alt="Về GIGAMALL">Về GIGAMALL</a></li>
+                                    <li><a style="" href="javascript:void(0)" alt="Về GIGAMALL">Về THISO MALL</a></li>
                                     <li><a style="" href="javascript:void(0)" alt="Tuyển dụng">Tuyển dụng</a></li>
                                 </ul>
                             </li>
@@ -55,7 +57,7 @@
                                     <li><a style="" href="javascript:void(0)" alt="Khác">Khác</a></li>
                                 </ul>
                             </li>
-                            <li><a href="javascript:void(0)" alt="Sơ đồ tầng">Sơ đồ tầng</a></li>
+                            @* <li><a href="javascript:void(0)" alt="Sơ đồ tầng">Sơ đồ tầng</a></li>*@
                             <li class="has-sub">
                                 <span class="submenu-button"></span>
                                 <a asp-action="Member" asp-controller="Home" alt="Thành viên">Thành viên</a>
@@ -65,7 +67,7 @@
                                 </ul>
                             </li>
                             <li><a asp-action="Utilities" asp-controller="Home" alt="Tiện ích">Tiện ích</a></li>
-                            <li><a href="javascript:void(0)" alt="Liên hệ">Liên hệ</a></li>
+                            <li><a href="@Url.Action("LoginWifi", "Home")" alt="Liên hệ">Wifi Marketing</a></li>
                             <li id="search_form" class="search_form">
                                 <form id="fsm" name="fsm" action="/xmlhttp.aspx?FID=6&amp;search=1" method="post">
                                     <input type="text" id="searchid" name="searchid" onfocusout="hidden_search_form()" placeholder="Nhập từ khoá" onkeypress="return keyEnter(event,'Search')" class="" onclick="this.value=''">

@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "DetailLoginWifi";
+    Layout = "~/Views/Shared/_LayoutWifi.cshtml";
+}
+<div class="container">
+    <div class="card center">
+        <div class="container-image">
+            <img src="~/images/THACO/FlashComponentCut.png" class="card-img-top" />
+        </div>
+        <div class="card-body">
+            <div class="container mt-5">
+                <div class="input-group flex-nowrap">
+                    <input type="tel" class="form-control w-75" placeholder="Số điện thoại">
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn" type="button" onclick="location.href='@Url.Action("DetailLoginWifi", "Home" )'">Connect Wifi</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<style>
+    body {
+        background-color: #898989;
+    }
+
+    .center {
+        margin: 0 auto;
+    }
+
+    .card {
+        margin-top: 2rem;
+        width: 500px;
+        height: 90vh;
+        border-radius: 6%;
+        background-color: white;
+        border: unset;
+    }
+
+        .card input {
+            height: 50px;
+            border-radius: 10px;
+        }
+
+        .card button {
+            margin-top: 20px;
+            border-radius: 10px;
+            background-color: peru;
+            border: unset;
+            height: 50px;
+            color: white;
+            font-weight: 700;
+        }
+
+            .card button:hover {
+                background-color: #aa7037;
+            }
+
+    .container-image {
+        display: contents;
+    }
+
+        .container-image img {
+            width: 100%;
+            height: 60%;
+            padding: 10px;
+            border-radius: 8%;
+        }
+</style>
