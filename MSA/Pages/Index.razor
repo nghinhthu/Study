@@ -3,7 +3,7 @@
 
 }
 
-<div class="container utilities-list">
+<div id="home" class="container utilities-list">
     <div class="row">
         <div class="info-group">
             <h1 class="title-group-home">
@@ -13,7 +13,7 @@
         <div class="col-12">
             <div class="intro-text" style="font-size: 20px;">
                 <p>
-                    Công ty TNHH Ứng dụng CNTT SAO MAI (MSA), với hơn 16 năm kinh nghiệm là nhà tư vấn và cung cấp
+                    Công ty TNHH Ứng Dụng Công Nghệ Tin Học SAO MAI (MSA), với hơn 16 năm kinh nghiệm là nhà tư vấn và cung cấp
                     giải pháp CNTT và chuyển đổi số với bề dày chuyên môn đã được kiểm chứng trong lĩnh vực bán lẻ hàng đầu
                     tại Việt Nam. Các khách hàng tiêu biểu: Takashimaya, Gigamall, Diamond Plaza, Golden Gate, Circle K…
                 </p>
@@ -198,6 +198,16 @@
 </div>
 
 <style>
+    @@media(min-width:960px) {
+        .customer {
+            height: 700px;
+        }
+    }
+
+    #introduction, #project, #customer {
+        padding-bottom: 20px;
+    }
+
     .customer img {
         width: 100%;
         height: auto;
@@ -206,4 +216,9 @@
     .image-center {
         margin: auto 0px;
     }
+
+    /*html, body {
+        scroll-behavior: smooth;
+        transition: 1.5s;
+    }*/
 </style>
